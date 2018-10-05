@@ -28,7 +28,8 @@ column name     | data type | details
 `id `             | integer   | not null, primary key
 `count  `         | integer   | default 0
 `answer_id     `  | integer   | not null, indexed, unique
-`question_id   `  | integer   | not null, indexed, unique
+`question_id   `  | integer   | indexed, unique
+`user_id     `    | integer   | indexed, unique
 
 ---
 ## `questions`
@@ -68,8 +69,9 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 `id `             | integer   | not null, primary key
 `answer_id  `     | integer   | indexed
-`question_id   `  | integer   | not null, indexed
-`body  `          | text      | the code
+`question_id   `  | integer   | indexed
+`user_id   `      | integer   | not null, indexed
+`body  `          | text      | not null, the code
 
 ---
 
@@ -99,7 +101,7 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 `id `             | integer   | not null, primary key
 `user_id  `       | integer   | not null, indexed
-`job_id   `       | integer   | indexed
+`badge_id   `     | integer   | indexed
 
 ---
 
