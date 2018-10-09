@@ -1,26 +1,28 @@
 ```js
 {
 	entities: {
-		
-	  questions: {
-	    1: {
-	      id: 1,
-	      category_id: 7,
-	      title: "Who wrote Jane Eyre"
-	      body: "I can't remember... does anyone know the answer?"
-	    }
-	  },
-	  answers: {
-	    1: {
-	      id: 1,
-	      category_id: 5,
-	      question_id: 4,
-	      user_id: 1,
-	      body: "Einstein wrote particle physique in 1922"
-	    }
-	  },
-		comments: {
 
+		questions: {
+			1: {
+				id: 1,
+				category_id: 7,
+				title: "Who wrote Jane Eyre"
+				body: "I can't remember... does anyone know the answer?"
+			}
+		},
+		answers: {
+			1: {
+				id: 1,
+				category_id: 5,
+				question_id: 4,
+				user_id: 1,
+				body: "Einstein wrote particle physique in 1922"
+			}
+		},
+		comments: {
+			5: {
+				body: "this is a correctly formatted comment"
+			},
 		},
 		votes: {
 			30: {
@@ -67,13 +69,17 @@
 				user_id: 1
 			}
 		},
-		errors: {
-			userErrors: [],
-			sessionErrors: [],
-			questionErrors: [],
-	    commentErrors: [],
-	    answerErrors: ["cannot answer own question. Please post as comment instead"]
-		}
-	}
+	},
+	ui: {
+		loading: true
+	},
+	errors: {
+		userErrors: ["error in answer field. see answer errors"],
+		sessionErrors: [],
+		questionErrors: ["cannot answer own question"],
+		commentErrors: [],
+		answerErrors: ["cannot answer own question. Please post as comment instead"]
+	},
+	session: { user_id: 34 }
 }
 ```
