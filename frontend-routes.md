@@ -4,46 +4,45 @@ ________________________________________________
 `Our components are organized as follows:`  
 
 `Root`  
- - `App`  
-  - `NavBar`  
-  - `(main component goes here)`  
-  - `Footer`  
+- `App`  
+- `NavBar`  
+- `(main component goes here)`  
+- `Footer`  
 
 __________________________________________________________
 `The following routes, defined in App, will render components between NavBar and Footer.`  
 
 #### Main
-`/`  
-`Splash`  
-`/login`  
-`SessionForm`  
-`/signup`  
-`SessionForm`  
+- `/`  
+  - `Splash`  
+- `/login`  
+  - `SessionForm`  
+- `/signup`  
+  - `SessionForm`
+
+#### `User`
+- `/users/:userId`
+  - `ProfileComponent`
+  - `QuestionsIndex`
+  - `CommentsIndex`
 
 #### Questions
-`QuestionIndex`  
-`QuestionIndexItem`  
-`/users/:userId/questions/`  
-`ProfileComponent`  
-`QuestionIndex`  
-`QuestionIndexItem`  
-`/questions/new`  
-`QuestionForm`  
-`/questions/:questionId`  
-`QuestionShow`  
-`/questions/:questionId/edit`  
-`QuestionForm`  
+- `/questions`
+  - `QuestionsIndex`  
+    - `QuestionsIndexItem`  
+  - `CreateQuestionForm`
+- `/questions/:questionId`
+  - `QuestionShow`
+- `/questions/:questionId/edit`
+  - `EditQuestionForm`
+
 
 #### Comments
-`CommentsIndex`  
-`CommentsIndexItem`  
-`/users/:userId/questions`  
-`ProfileComponent`  
-`CommentsIndex`  
-`CommentsIndexItem`  
-`questions/:questionId/comments/new`  
-`CommentsForm`  
-`questions/:questionId/comments/:commentsId`  
-`CommentsShow`  
-`questions/:questionId/comments/:commentsId/edit`  
-`CommentsForm`  
+- `/questions/:questionId/comments/`
+  - `CommentsIndex`  
+    - `CommentsIndexItem`  
+  - `CreateCommentsForm`
+- `/questions/:questionId/:comments/:commentId`
+  - `CommentsShow`
+- `/questions/:questionId/comments/:commentId/edit`
+  - `EditCommentsForm`
