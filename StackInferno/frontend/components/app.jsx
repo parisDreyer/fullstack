@@ -21,7 +21,6 @@ const App = () => (
       </li>
       <GreetingContainer />
     </ul>
-    <div className="background-image"></div>
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />

@@ -1,28 +1,57 @@
 
 
-  .button-holder {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
+.button-holder {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.login-form-container{
+  position: absolute;
+  height: 200px;
+  top: 200px;
+  left: 37%;
+}
 
-  .login-form-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-  }
+.login-form-box {
+  height: inherit;
+}
 
-  .login-form {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
+.login-form {
+  display: flex;
+  justify-content: flex-start;
+  width: 300px;
+  flex-direction: column;
+}
 
-  .login-input {
-    margin-left: 20px;
-  }
+/* .login-input {
+margin-left: 20px;
+height: 20px;
+width: 160px;
+} */
 
-  .login-form-box {
-    outline: 1px solid black;
-    padding: 20px;
-  }
+.login-form-box {
+  outline: 1px solid black;
+  padding: 20px;
+}
+
+input {
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  margin: 0em;
+  font: 400 11px;
+}
+
+.login-form-box label {
+  padding-right: 10px;
+
+}
+.login-form-box input {
+  border: .5px groove lightgrey;
+}
