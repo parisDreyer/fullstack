@@ -62,3 +62,16 @@ a {
   color: #07c;
   cursor: pointer;
 }
+
+.logo-container{
+  /* display: inline-block; */
+}
+.logo{
+  align-content: center;
+  background-image: url(/assets/rings_of-hell.jpeg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+}

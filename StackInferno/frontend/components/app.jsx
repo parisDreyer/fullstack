@@ -17,7 +17,12 @@ const App = () => (
   <div>
     <ul className="header-nav">
       <li className="header-link">
-        <Link to="/">stack <strong>inferno</strong></Link>
+        <Link to="/">
+          <div className="logo-container">
+            <div className="logo">
+            </div>stack <strong>inferno</strong>
+          </div>
+        </Link>
       </li>
       <GreetingContainer />
     </ul>
@@ -29,3 +34,9 @@ const App = () => (
 );
 
 export default App;
+
+
+
+
+
+// <div className="background-image"></div>
