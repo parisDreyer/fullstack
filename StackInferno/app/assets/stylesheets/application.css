@@ -30,76 +30,25 @@
 
    body {
      font-family: 'Abel', sans-serif;
+     position: relative;
    }
 
-  .content {
-    height: 100%;
-  }
-
-  .map {
-    width: 500px;
-    height: 500px;
-    float: left;
-    position: relative;
-  }
-
-  .reviews {
-    float: left;
-  }
-
-  .review-form {
-    float: left;
-  }
-
-  .question-index-item {
-    border: 1px solid black;
+  .background-image{
+    position: absolute;
+    z-index: 3;
+    min-width: 800px;
+    min-height: 800px;
     width: 100%;
-    margin-bottom: 5px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-  }
+    height: 100%;
+    background-image: url(/assets/Botticellis-Inferno.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.1;
 
-  .question-index-item img {
-    height: 200px;
-    max-width: 130px;
+    /* image from:
+     http://www.openculture.com/2018/06/visualizing-dantes-hell.html
+     */
   }
-
-  .user-pane {
-    display: flex;
-    justify-content: center;
-  }
-
-  .right-half {
-    width: 400px;
-    margin-left: 50px;
-    margin-top: 40px;
-    height: 480px;
-    overflow-y: scroll;
-    padding: 0 20px 20px 20px;
-  }
-
-  .right-half.question-details {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-  }
-
-  .index-item-info {
-    margin: 10px 10px 10px 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .index-item-category {
-    font-weight: bold;
-  }
-
-  .index-item-copy {
-    margin-left: 15px;
-  }
-
   header {
     margin-left: 5%;
   }
@@ -108,129 +57,12 @@
     margin-bottom: 0px;
   }
 
-  .single-question-show {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
+a:hover{
+  color: #005999;
+  text-decoration: none;
+}
 
-  .single-question-map {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .question-list {
-    padding-left: 0;
-    list-style-position: inside;
-    margin-top: 0;
-  }
-
-  .index-image {
-    max-height: 200px;
-    max-width: 100px;
-  }
-
-  .review-button, .review-form {
-    width: 100px;
-    margin-top: 20px;
-  }
-
-  .review-button {
-    /* padding-top: 1px; */
-  }
-
-  .header-name {
-    margin: 7px 0 0 0;
-
-  }
-
-  .header-favorites {
-    margin: 4px 0 4px 0;
-    font-size: 14px;
-  }
-
-  .new-question-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-  }
-
-  .new-question-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    outline: black 1px solid;
-    padding: 5px 30px 10px 30px;
-  }
-
-  .new-question-title {
-    text-align: center;
-  }
-
-  .new-question-button {
-    margin: 5px;
-  }
-
-  input.question-field {
-    margin: 10px;
-    padding: 2px;
-  }
-
-  label.question-field {
-    width: 125px;
-    display: inline-block;
-  }
-
-  .button-holder {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  input.new-question-button {
-    width: 160px;
-    margin-top: 10px;
-  }
-
-  button.new-question-button {
-    width: 160px;
-  }
-
-  .login-form-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-  }
-
-  .login-form {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .login-input {
-    margin-left: 20px;
-  }
-
-  .login-form-box {
-    outline: 1px solid black;
-    padding: 20px;
-  }
-
-  .filter {
-    font-weight: bold;
-  }
-
-  .header-link {
-    text-decoration: none;
-    color: black;
-  }
-
-  hr {
-    border-bottom: 1px solid grey;
-  }
-
-  .session-submit {
-    text-transform: capitalize;
-  }
+a {
+  color: #07c;
+  cursor: pointer;
+}
