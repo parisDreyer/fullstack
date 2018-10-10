@@ -64,14 +64,14 @@ a {
 }
 
 .logo-container{
-  /* display: inline-block; */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .logo{
-  align-content: center;
   background-image: url(/assets/rings_of-hell.jpeg);
   background-size: contain;
   background-repeat: no-repeat;
-  width: 28px;
-  height: 28px;
-  display: inline-block;
+  width: 24px;
+  height: 24px;
 }
