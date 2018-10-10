@@ -33,16 +33,10 @@ __________________________________________________________
   - `CreateQuestionForm`
 - `/questions/:questionId`
   - `QuestionShow`
+  - `CommentsIndex`
+      - `CommentsIndexItem`
+      - `CreateCommentsForm`
+      - `/questions/:questionId/comments/:commentId/edit`
+        - `EditCommentsForm`
 - `/questions/:questionId/edit`
   - `EditQuestionForm`
-
-
-#### Comments
-- `/questions/:questionId/comments/`
-  - `CommentsIndex`  
-    - `CommentsIndexItem`  
-  - `CreateCommentsForm`
-- `/questions/:questionId/:comments/:commentId`
-  - `CommentsShow`
-- `/questions/:questionId/comments/:commentId/edit`
-  - `EditCommentsForm`
