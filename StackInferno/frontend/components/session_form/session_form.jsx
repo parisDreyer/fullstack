@@ -42,11 +42,12 @@ class SessionForm extends React.Component {
       signupInput = (
         <div>
           <label>Email:
+            <br />
             <input type="text"
               value={this.state.email}
               onChange={this.update('email')}
               className="login-input"
-            />
+              />
           </label>
           <br />
         </div>
@@ -54,8 +55,10 @@ class SessionForm extends React.Component {
     }
     return (
       <div className="login-form-container">
+        <div className="explanation-text">
+          Stack Inferno is trying to be a part of the StackExchange 174 <a href="https://stackexchange.com/sites">communities</a>.
+        </div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Stack Inferno!
           <br/>
           Please {this.props.formType} or {this.props.navLink}
           <div className="login-form">
@@ -66,7 +69,7 @@ class SessionForm extends React.Component {
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
-              />
+                />
             </label>
             {signupInput}
             <label>Password:
@@ -75,7 +78,7 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
-              />
+                />
             </label>
             <br/>
             <input className="session-submit" type="submit" value={this.props.formType} />

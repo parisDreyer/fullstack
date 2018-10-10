@@ -75,3 +75,13 @@ a {
   width: 24px;
   height: 24px;
 }
+
+
+.explanation-text{
+  margin-left: -50%;
+  min-width: 800px;
+  width: auto;
+  font-size: 20px;
+  font-weight: normal;
+  padding-bottom: 25px;
+}
