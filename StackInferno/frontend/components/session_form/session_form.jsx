@@ -37,6 +37,21 @@ class SessionForm extends React.Component {
 
   // {this.renderErrors()} // this was below line 45
   render() {
+    let signupInput = (<br />);
+    if(this.props.formType === 'signup'){
+      signupInput = (
+        <div>
+          <label>Email:
+            <input type="text"
+              value={this.state.email}
+              onChange={this.update('email')}
+              className="login-input"
+            />
+          </label>
+          <br />
+        </div>
+      );
+    }
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -52,7 +67,7 @@ class SessionForm extends React.Component {
                 className="login-input"
               />
             </label>
-            <br/>
+            {signupInput}
             <label>Password:
               <input type="password"
                 value={this.state.password}
