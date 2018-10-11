@@ -82,6 +82,17 @@ input.splash-login-input:hover{
   height: 36px;
 }
 
+.splash-explanation-text{
+  font-weight: normal;
+  font-size: 24px;
+  padding-left: 42px;
+  padding-right: 42px;
+  padding-top: 0;
+  top: 0;
+
+}
+.splash-explanation-text h3 { font-size: 42px;}
+
 .splash-form-text {
   background-color: lightgrey;
   min-width: 80px;
