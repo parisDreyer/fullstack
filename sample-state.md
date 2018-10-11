@@ -5,7 +5,7 @@
 		questions: {
 			1: {
 				id: 1,
-				category_id: 7,
+				categoryId: 7,
 				title: "Who wrote Jane Eyre"
 				body: "I can't remember... does anyone know the answer?"
 			}
@@ -13,9 +13,9 @@
 		answers: {
 			1: {
 				id: 1,
-				category_id: 5,
-				question_id: 4,
-				user_id: 1,
+				categoryId: 5,
+				questionId: 4,
+				userId: 1,
 				body: "Einstein wrote particle physique in 1922"
 			}
 		},
@@ -28,19 +28,19 @@
 			30: {
 				id: 30,
 				count: 2,
-				user_id: 10,
-				answer_id: 1,
-				question_id: null
+				userId: 10,
+				answerId: 1,
+				questionId: null
 			}
 			37: {
 				id: 37,
 				count: -1,
-				user_id: 10,
-				answer_id: null,
-				question_id: 1
+				userId: 10,
+				answerId: null,
+				questionId: 1
 			}
 		},
-		code_snippets: {
+		codeSnippets: {
 			4: {
 				answer_id: null,
 				question_id: 1,
@@ -48,25 +48,25 @@
 				body: `x + z = b; xzb!;`
 			}
 		},
-		user_badges: {
+		userBadges: {
 			15: {
 				id: 15,
-				user_id: 1,
-				badge_id: 4
+				userId: 1,
+				badgeId: 4
 			}
 		},
-		user_jobs: {
+		userJobs: {
 			12: {
 				id: 12,
-				user_id: 1,
-				badge_id: 136
+				userId: 1,
+				badgeId: 136
 			}
 		},
-		user_tags: {
+		userTags: {
 			17: {
 				id: 17,
-				category_id: 5,
-				user_id: 1
+				categoryId: 5,
+				userId: 1
 			}
 		},
 	},
@@ -80,6 +80,6 @@
 		commentErrors: [],
 		answerErrors: ["cannot answer own question. Please post as comment instead"]
 	},
-	session: { user_id: 34 }
+	session: { userId: 34 }
 }
 ```

@@ -1,7 +1,7 @@
 # `MVP List`
   StackInferno, a StackOverflow clone, is a copy of StackOverflow's ui, and basic functionality that uses 14th Century Italian writer Dante Alighieri's epic poem Dante's Inferno as seed data.
 1. `Hosting on Heroku (10/10/2018)`  
-  [Stack Inferno Live](https://stack-inferno.herokuapp.com/)
+  [Stack Inferno Live](https://stack-inferno.herokuapp.com)
 2. `User Authentication (10/11/2018) 2 Day`
   - Users can sign up, sign in, sign out
   - users can use a demo login to try the site
