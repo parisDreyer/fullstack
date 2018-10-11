@@ -18,10 +18,8 @@ class QuestionShow extends React.Component{
   render() {
     return(
       <div className="single-question-show">
-        <ul>
-          <li>{this.props.question.title}</li>
-          <li>{this.props.question.body}</li>
-        </ul>
+        <div className="question-title">{this.props.question.title}</div>
+        <div className="question-body">{this.props.question.body}</div>
       </div>
     );
   }

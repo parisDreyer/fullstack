@@ -53,9 +53,7 @@ function renderSplash(){
 
 const App = () => (
   <div>
-    { renderHeader() }
-    { renderSplash() }
-    <div><br/><br/><br/><br/></div>
+    { renderHeader() } { renderSplash() } <br/><br/><br/><br/>
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
