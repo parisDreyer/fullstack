@@ -1,19 +1,30 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import QuestionDetail from './question_detail';
 import { ProtectedRoute} from '../../util/route_util';
 
 
-const QuestionShow = ({ question, questionId, fetchQuestion }) => {
-  const questions = {
-    [questionId]: question
+class QuestionShow extends React.Component{
+  constructor(props){
+    super(props);
+    this.state= {
+      title: '',
+      body: ''
+    }
   }
-
-  return(
-    <div className="single-question-show">
-
-      <QuestionDetail question={question} />
-    </div>
-  );
+  componentDidMount(){
+    this.props.fetchQuestion(this.props.questionId);
+  }
+  render() {
+    return(
+      <div className="single-question-show">
+        <ul>
+          <li>{this.props.question.title}</li>
+          <li>{this.props.question.body}</li>
+        </ul>
+      </div>
+    );
+  }
 }
+
+export default QuestionShow;

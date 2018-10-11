@@ -1,4 +1,1 @@
-json.question do
-  json.partial! '/api/questions/question', question: @question
-  # json.
-end
+json.partial! '/api/questions/question', question: @question

@@ -11,9 +11,9 @@ import {
 import GreetingContainer from './greeting/greeting_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
-import SplashSignupContainer from './splash/splash_container.jsx';
+import SplashSignupContainer from './splash/splash_container';
 
-import QuestionShowContainer from './question_show/question_show.jsx';
+import QuestionShowContainer from './question_show/question_show_container';
 import QuestionFormContainer from './question_form/question_form_container';
 import {AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -51,77 +51,11 @@ function renderSplash(){
 </div>);
 }
 
-function renderMainContent(){
-  return (
-    <div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-    </div>
-  );
-}
 const App = () => (
   <div>
     { renderHeader() }
     { renderSplash() }
-    { renderMainContent()}
+    <div><br/><br/><br/><br/></div>
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
