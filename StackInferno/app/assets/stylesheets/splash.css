@@ -1,0 +1,97 @@
+.old-hero {
+  top: 42px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  color: #FFF;
+  font-size: 17px;
+  line-height: 1.53333333;
+  overflow: hidden;
+  height: 400px;
+}
+.old-hero::after{
+  content: "";
+  background-image: url(/assets/gustave_dore.jpg),linear-gradient(to right, #126CFA 0%, #108AEC 100%);
+  background-position: right center, center center;
+  background-repeat: no-repeat,no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+
+  opacity: 0.3;
+  z-index: -1;
+}
+.old-hero-background::after {
+  content: "";
+  background-color: #117bf3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+
+  /* opacity: 0.3; */
+  z-index: -1;
+}
+
+
+
+
+.splash-signup-container{
+  margin-right: 300px;
+}
+
+.splash-login-form{
+}
+
+input.splash-login-input{
+  color: black;
+  background-color: snow;
+  display: inline-flex;
+}
+input[type=submit].splash-session-submit{
+  margin-left: 0;
+  background: inherit;
+  color: #FFF;
+  border: 1px solid #FFF;
+}
+
+input.splash-login-input:hover{
+  border-color: inherit;
+}
+
+.splash-form-label{
+  left: 20px;
+  margin-bottom: 10px;
+  border-radius: 2px 0 0 2px;
+  -webkit-flex-basis: 30%;
+  flex-basis: 125px;
+  line-height: 41px;
+  max-width: 125px;
+  white-space: nowrap;
+  padding: 0 16px;
+  font-size: 16px;
+  border: 0;
+  display: inline-flex;
+  color: black;
+
+  width: 100px;
+  height: 36px;
+}
+
+.splash-form-text {
+  background-color: lightgrey;
+  min-width: 80px;
+  padding-right: 50px;
+  padding-left: 42px;
+}
+
+@media screen and (max-width: 600px){
+
+  .old-hero {
+    top: 52px;
+  }
+}

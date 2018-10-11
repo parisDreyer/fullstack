@@ -56,7 +56,7 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <div className="explanation-text">
-          Stack Inferno is trying to be a part of the StackExchange 174 <a href="https://stackexchange.com/sites">communities</a>.
+          Stack Inferno is trying to be a part of the StackExchange a network of 174 <a href="https://stackexchange.com/sites">communities</a>.
         </div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
