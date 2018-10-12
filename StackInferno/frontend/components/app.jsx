@@ -20,7 +20,7 @@ import {AuthRoute, ProtectedRoute } from '../util/route_util';
 
 function renderHeader(){
   return (
-    <div className="nav-bar">
+    <header className="nav-bar">
       <ul className="header-nav">
         <li className="header-link">
           <Link to="/">
@@ -32,7 +32,7 @@ function renderHeader(){
         </li>
         <GreetingContainer />
       </ul>
-    </div>
+    </header>
   );
 }
 
