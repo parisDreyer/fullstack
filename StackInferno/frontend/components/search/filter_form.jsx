@@ -6,7 +6,6 @@ const handleChange = (filter, updateFilter) => e => (
 
 const FilterForm = ({ limit, updateFilter }) => (
   <div>
-    <span className="filter">Filter results:</span>
     <br/>
     <label>Limit Results</label>
     <input
