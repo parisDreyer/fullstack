@@ -37,37 +37,41 @@ function renderHeader(){
   );
 }
 
-function renderSplash(){
-  if(window.location.toString().match(/\/#\/.*$/)[0] === "/#/")
-  return (<div className="old-hero">
-  <div className="splash-explanation-text">
-    <h3>Learn, Share, Build</h3>
-    <p>
-      Each month, over 50 million denizens come to Stack Inferno to learn, share
-      their knowledge, and maunder through eternity. Join the world’s largest denizen
-      community.
-    </p>
-  </div>
-  <div className="old-hero-background"></div>
-  <SplashSignupContainer />
-</div>);
+function renderSplash({user}){
+  if(!user && window.location.toString().match(/\/#\/.*$/)[0] === "/#/")
+  {
+    return (
+      <div className="old-hero">
+        <div className="splash-explanation-text">
+          <h3>Learn, Share, Build</h3>
+          <p>
+            Each month, over 50 million denizens come to Stack Inferno to learn, share
+            their knowledge, and maunder through eternity. Join the world’s largest denizen
+            community.
+          </p>
+        </div>
+        <div className="old-hero-background"></div>
+        <SplashSignupContainer />
+      </div>
+
+    );
+  } else return (<div></div>);
 }
 
-const App = () => (
+const App = (user) => (
   <div>
-    { renderHeader() } { renderSplash() } <br/><br/><br/>
-  <AsideNav links={1}/>
-  <Switch>
+    { renderHeader() } { renderSplash(user) }
+    <div className="content">
+    <AsideNav links={1}/>
+    <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/questions/new" component={QuestionFormContainer} />
       <Route path="/questions/:questionId" component={QuestionShowContainer} />
       <Route exact path="/" component={SearchContainer} />
     </Switch>
+    </div>
   </div>
 );
 
 export default App;
-
-
-// <div className="background-image"></div>

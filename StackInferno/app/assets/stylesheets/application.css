@@ -1,56 +1,56 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 
-  ::-webkit-scrollbar {
-      width: 12px;
-  }
+::-webkit-scrollbar {
+  width: 12px;
+}
 
-  ::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-      border-radius: 10px;
-  }
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
 
-  ::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-  }
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
 
-   body {
-     font-family: 'Abel', sans-serif;
-     position: relative;
-   }
+body {
+  font-family: 'Abel', sans-serif;
+}
 
-  /* .background-image{
-    position: absolute;
-    min-width: 800px;
-    min-height: 800px;
-    width: 100%;
-    height: 100%;
-    background-image: url(/assets/Botticellis-Inferno.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.1;
+.main-content{
+  width: 620px;
+  min-height: 200px;
+  padding: 20px;
+}
 
-  } */
-  header {
-  }
+.content {
+  width: auto;
+  border: 1px solid #ccc;
+  border-top: 0;
+  display: inline-flex;
+  align-items: center;
+}
+header {
+}
 
-  h1, h5 {
-    margin-bottom: 0px;
-  }
+h1, h5 {
+  margin-bottom: 0px;
+}
 
 a:hover{
   color: #005999;
@@ -74,7 +74,6 @@ a {
   width: 24px;
   height: 24px;
 }
-
 
 .explanation-text{
   margin-left: -50%;
