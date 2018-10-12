@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 
 import GreetingContainer from './greeting/greeting_container';
+import AsideNav from './nav/aside_nav';
 import SignupFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import SplashSignupContainer from './splash/splash_container';
@@ -54,8 +55,9 @@ function renderSplash(){
 
 const App = () => (
   <div>
-    { renderHeader() } { renderSplash() } <br/><br/><br/><br/>
-    <Switch>
+    { renderHeader() } { renderSplash() } <br/><br/><br/>
+  <AsideNav links={1}/>
+  <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/questions/new" component={QuestionFormContainer} />
