@@ -76,6 +76,7 @@
   min-height: 420px;
 
   padding: 20px;
+  padding-top: 48px;
   padding-right: 19px;
   border-right: 1px solid #ccc;
   flex-shrink: 0;
