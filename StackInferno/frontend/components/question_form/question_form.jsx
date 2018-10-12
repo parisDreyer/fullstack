@@ -23,6 +23,20 @@ class QuestionForm extends React.Component {
       [property]: e.target.value
     });
   }
+  askAQuestion(component){
+    return (
+      <div className="single-question-show">
+        <div className="header-section">
+          <div className="question-index-header">
+            <h1 className="question-title">Ask A Question</h1>
+          </div>
+        </div>
+        <div className="question-body">
+          {component}
+        </div>
+      </div>
+    );
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -34,33 +48,38 @@ class QuestionForm extends React.Component {
     this.props.createQuestion(formData);
     this.navigateToSearch();
   }
-
   render(){
     const { title, body } = this.state;
     return(
       <div className="new-question-container">
-        <form onSubmit={this.handleSubmit}>
-          <label className="question-field">
-            Title
-            <input
-              type="text"
-              value={title}
-              onChange={this.update('title')}
-              className="question-input-field"
-              />
-          </label>
-          <label className="question-field">
-            Body
-            <input
-              type="text"
-              value={body}
-              onChange={this.update('body')}
-              className="question-input-field"
-              />
-          </label>
-          <input type="submit" value="Ask Question"
-            className="new-question-button" />
-        </form>
+        {this.askAQuestion(
+          <form onSubmit={this.handleSubmit}>
+            <label className="question-field">
+              Title
+              <br />
+              <input
+                type="text"
+                value={title}
+                onChange={this.update('title')}
+                className="question-input-field"
+                />
+            </label>
+            <br />
+            <label className="question-field">
+              Body
+              <br />
+              <input
+                type="text"
+                value={body}
+                onChange={this.update('body')}
+                className="question-input-field"
+                />
+            </label>
+            <br />
+            <input type="submit" value="Ask Question"
+              className="new-question-button" />
+          </form>
+        )}
       </div>
     );
   }
