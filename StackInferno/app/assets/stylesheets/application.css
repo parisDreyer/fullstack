@@ -33,18 +33,23 @@ body {
 }
 
 .main-content{
+  height: auto;
   min-height: 200px;
   min-width: 400px;
   padding: 20px;
 }
 
 .content {
+  top: 43px;
+  height: auto;
   width: 85%;
   min-width: 600px;
   border: 1px solid #ccc;
+  border-bottom: 0;
   border-top: 0;
   display: inline-flex;
-  align-items: center;
+  /* align-items: center; */
+  position: relative;
 }
 header {
 }

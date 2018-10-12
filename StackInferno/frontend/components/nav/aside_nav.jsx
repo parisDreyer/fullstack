@@ -1,6 +1,6 @@
 import React from 'react';
 const AsideNav = navLinks => (
-  <aside className="left-sidebar">
+  <div className="left-sidebar">
     <div className="left-sidebar-sticky-container">
       <ul>
         <li>Sample Link 1</li>
@@ -8,7 +8,7 @@ const AsideNav = navLinks => (
         <li>Sample Link 3</li>
       </ul>
     </div>
-  </aside>
+  </div>
 );
 
 export default AsideNav;

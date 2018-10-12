@@ -74,9 +74,8 @@
   box-sizing: border-box;
   width: 163px;
   min-height: 420px;
-
   padding: 20px;
-  padding-top: 48px;
+  flex-shrink: 0;
   padding-right: 19px;
   border-right: 1px solid #ccc;
   flex-shrink: 0;

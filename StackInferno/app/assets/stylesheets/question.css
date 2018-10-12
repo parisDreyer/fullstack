@@ -1,3 +1,10 @@
+.question-index-header{
+  font-size: 100%;
+  vertical-align: baseline;
+  display: flex;
+  justify-content: space-between;
+}
+
 .question_index_item{
 
 }
