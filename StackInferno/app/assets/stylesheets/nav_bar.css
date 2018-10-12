@@ -57,17 +57,8 @@
   background-color: lightgrey;
 }
 
-.signup {
-  padding: 2px;
-  border-radius: 4px;
-  box-shadow: 1px 1px 1px 1px #888;
-  cursor: pointer;
-  color: snow;
-  background-color: #07c;
-}
-.signup:hover{
-  color: snow;
-  background-color: #005999;
+.signup{
+  padding: .4em;
 }
 
 .left-sidebar {

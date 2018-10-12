@@ -1,3 +1,10 @@
+.single-question-show{
+  height: auto;
+  min-height: 1000px;
+  min-width: 400px;
+  width: 100%;
+}
+
 .question-index-header{
   vertical-align: baseline;
   display: flex;
@@ -5,12 +12,12 @@
 
 }
 .limit-specs{
-    /* border-bottom: 1px solid #eff0f1; */
-    /* margin-bottom: 1.2em; */
+
 }
 .question-index-header h1{
   font-size: 2em;
 }
+
 
 .question-index-item{
   width: 100%;

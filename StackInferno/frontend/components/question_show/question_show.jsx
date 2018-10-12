@@ -18,7 +18,12 @@ class QuestionShow extends React.Component{
   render() {
     return(
       <div className="single-question-show">
-        <div className="question-title">{this.props.question.title}</div>
+        <div className="header-section">
+          <div className="question-index-header">
+            <h1 className="question-title">{this.props.question.title}</h1>
+            <Link to="/questions/new" className="link-button">Ask Question</Link>
+          </div>
+        </div>
         <div className="question-body">{this.props.question.body}</div>
       </div>
     );
