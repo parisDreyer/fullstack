@@ -9,7 +9,7 @@ class IndexItem extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  this.handleClick() {
+  handleClick() {
     const questionId = this.props.question.id;
     this.props.history.push(`/questions/${questionId}`);
   }

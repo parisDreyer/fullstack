@@ -13,6 +13,7 @@ import SignupFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import SplashSignupContainer from './splash/splash_container';
 
+import SearchContainer from './search/search_container';
 import QuestionShowContainer from './question_show/question_show_container';
 import QuestionFormContainer from './question_form/question_form_container';
 import {AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -59,6 +60,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/questions/new" component={QuestionFormContainer} />
       <Route path="/questions/:questionId" component={QuestionShowContainer} />
+      <Route exact path="/" component={SearchContainer} />
     </Switch>
   </div>
 );
