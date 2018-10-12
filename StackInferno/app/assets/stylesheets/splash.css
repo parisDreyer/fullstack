@@ -3,7 +3,7 @@
   color: #FFF;
   font-size: 17px;
   line-height: 1.53333333;
-
+  margin-bottom: -43px; /* crazy but it works to get the content offset right in place of the nav bar */
   background: linear-gradient(
     rgba(0,255,0,0.45),
     rgba(0,0,255,0.45)

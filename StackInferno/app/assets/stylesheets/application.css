@@ -32,11 +32,15 @@ body {
   font-family: 'Abel', sans-serif;
 }
 
+.header-section{
+  padding: 1.1em;
+  border-bottom: 1px solid #eff0f1;
+}
+
 .main-content{
   height: auto;
   min-height: 200px;
   min-width: 400px;
-  padding: 20px;
   width: 100%;
 }
 
@@ -45,11 +49,11 @@ body {
   height: auto;
   width: 85%;
   min-width: 600px;
-  border: 1px solid #ccc;
-  border-bottom: 0;
+  border-left: 1px solid #ccc;
+  /* border-bottom: 0;
   border-top: 0;
+  border-right: 0; */
   display: inline-flex;
-  /* align-items: center; */
   position: relative;
 }
 header {

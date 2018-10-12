@@ -9,7 +9,7 @@
 #  updated_at  :datetime         not null
 
 class Api::QuestionsController < ApplicationController
-  before_action :require_logged_in
+  before_action :require_logged_in, only: [:create, :destroy]
 
   def index
     @questions = bounds ? Question.in_bounds(bounds) : Question.all
