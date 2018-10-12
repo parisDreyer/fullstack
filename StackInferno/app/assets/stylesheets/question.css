@@ -1,12 +1,17 @@
 .question-index-header{
-  font-size: 100%;
+  padding-top: 2em;
   vertical-align: baseline;
   display: flex;
   justify-content: space-between;
 }
 
-.question_index_item{
+.question-index-header h1{
+  font-size: 2em;
+}
 
+.question-index-item{
+  width: 100%;
+  border-bottom: 1px solid #eff0f1;
 }
 
 

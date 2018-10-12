@@ -37,6 +37,7 @@ body {
   min-height: 200px;
   min-width: 400px;
   padding: 20px;
+  width: 100%;
 }
 
 .content {
