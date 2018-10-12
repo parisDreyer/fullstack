@@ -21,12 +21,12 @@ class IndexItem extends React.Component {
         <div className="index-item-title">
           {title || "No title!"}
         </div>
-        <div className="index-item-body">
-          {body||"No content!!!"}
-        </div>
       </div>
     );
   }
 }
-
+// remove body from render because not needed for index
+// <div className="index-item-body">
+//   {body||"No content!!!"}
+// </div>
 export default withRouter(IndexItem);

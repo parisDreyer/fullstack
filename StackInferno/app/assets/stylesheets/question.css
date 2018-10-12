@@ -1,0 +1,24 @@
+.question_index_item{
+
+}
+
+
+.index-item-title{
+
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  color: #07C;
+  line-height: 1.3;
+  margin-bottom: 1.2em;
+}
+
+.index-item-title:hover{
+    color: #3af;
+}
+
+.index-item-title:visited{
+      color: #005999;
+}
+
+.index-item-body{
+
+}
