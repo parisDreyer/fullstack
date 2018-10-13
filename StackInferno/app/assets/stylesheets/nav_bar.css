@@ -22,7 +22,7 @@
   box-shadow: 0px 0.5px lightgrey;
 }
 
-.header-link, .login-signup{
+.header-link{
   padding-top: 10px;
 }
 
@@ -38,7 +38,8 @@
 }
 
 .login-signup{
-  padding-right: 50px
+  padding-right: 50px;
+  padding-top: 5px;
 }
 
 .login-signup a{
