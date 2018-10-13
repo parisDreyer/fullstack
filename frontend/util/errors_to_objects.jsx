@@ -34,19 +34,21 @@ const errorsToObjects = (errorList) => {
 
 function arrContents(arr){
   return (
-    <ul className=".error-group">
+    <div className="error-group">
       {arr.map(el => el)}
-    </ul>
+    </div>
   );
 }
+// <ul className="error-group">
+//   {arr.map(el => el)}
+// </ul>
 
 function errorWrap(error, idx, errType) {
-  return (
-    <li key={`error-${idx}`} className={`${errType}-error`}>
-      {error}
-    </li>
-  );
+  return <div className={`${errType}-error`}>{error}</div>;
 }
+// <li key={`error-${idx}`} className={`${errType}-error`}>
+//   {error}
+// </li>
 
 
 export default errorsToObjects;
