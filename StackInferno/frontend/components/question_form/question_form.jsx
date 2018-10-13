@@ -68,12 +68,13 @@ class QuestionForm extends React.Component {
             <label className="question-field">
               Body
               <br />
-              <input
-                type="text"
-                value={body}
-                onChange={this.update('body')}
-                className="question-input-field"
-                />
+              <div className="question-text-input-area">
+                <textarea
+                  value={body}
+                  onChange={this.update('body')}
+                  className="question-input-field"
+                  />
+              </div>
             </label>
             <br />
             <input type="submit" value="Ask Question"

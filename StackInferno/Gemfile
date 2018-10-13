@@ -34,6 +34,9 @@ gem 'activestorage'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
+#markdown for react: npm install react-markdown
+#https://ourcodeworld.com/articles/read/532/how-to-render-markdown-as-pure-react-components
+
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do

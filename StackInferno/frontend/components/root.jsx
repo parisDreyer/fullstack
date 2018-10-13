@@ -7,11 +7,13 @@ import App from './app';
 const Root = ({store}) => (
   <Provider store={store}>
     <HashRouter>
-      <App user={
-          store.getState().entities.users[store.getState().session.id]
-        }/>
+      <App state={store.getState()}/>
     </HashRouter>
   </Provider>
 );
 
 export default Root;
+
+
+
+// store.getState().entities.users[store.getState().session.id]

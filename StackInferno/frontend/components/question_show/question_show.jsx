@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import { ProtectedRoute} from '../../util/route_util';
-
+import AsideNav from '../nav/aside_nav';
 
 class QuestionShow extends React.Component{
   constructor(props){
@@ -17,6 +17,8 @@ class QuestionShow extends React.Component{
   }
   render() {
     return(
+      <div className="content">
+        <AsideNav links={1}/>
       <div className="single-question-show">
         <div className="header-section">
           <div className="question-index-header">
@@ -26,6 +28,7 @@ class QuestionShow extends React.Component{
         </div>
         <div className="question-body">{this.props.question.body}</div>
       </div>
+    </div>
     );
   }
 }
