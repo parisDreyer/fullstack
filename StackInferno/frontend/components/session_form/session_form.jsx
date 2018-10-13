@@ -22,7 +22,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
-    this.props.history.push('/');
+    // this.props.history.push('/');
   }
 
   renderErrors() {
@@ -37,7 +37,6 @@ class SessionForm extends React.Component {
     );
   }
 
-  // {this.renderErrors()} // this was below line 45
   render() {
     let signupInput = (<br />);
     if(this.props.formType === 'signup'){
@@ -65,6 +64,7 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
           Please {this.props.formType} or {this.props.navLink}
+          {this.renderErrors()}
           <div className="login-form">
             <br/>
             <label>Username:

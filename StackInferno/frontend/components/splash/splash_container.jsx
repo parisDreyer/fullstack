@@ -7,7 +7,7 @@ import SplashSignupForm from './splash_signup_form';
 
 const mapStateToProps = ({ errors }) => {
   return {
-    // errors: errors.session,
+    errors: errors.session,
     formType: 'signup',
   };
 };

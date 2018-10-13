@@ -40,6 +40,7 @@ class SplashSignupForm extends React.Component {
   render() {
     return (
       <div className="splash-signup-container">
+        {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
           <br/>
           <div className="splash-login-form">
