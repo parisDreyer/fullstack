@@ -24,28 +24,65 @@ class SplashSignupForm extends React.Component {
     this.props.processForm(user);
   }
 
-  renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
+  errorObjects() {
+    let username = [];
+    let password = [];
+    let email = [];
+    let general = []
+    for (let i = 0; i < this.props.errors.length; ++i) {
+
+      let err = this.props.errors[i];
+
+      switch (err.split(' ')[0].toLowerCase()) {
+        case "username":
+        username.push(this.errorWrap(err, i, 'username'));
+        break;
+        case "email":
+        email.push(this.errorWrap(err, i, 'email'));
+        break;
+        case "password":
+        password.push(this.errorWrap(err, i, 'password'));
+        break;
+        default:
+        general.push(this.errorWrap(err, i, 'general'));
+      } // end switch
+
+    } // end map
+    return({
+      username: this.arrContents(username),
+      password: this.arrContents(password),
+      email: this.arrContents(email),
+      general: this.arrContents(general)
+    });
+  } // end errorObjects
+
+  arrContents(arr){
+    return (
+      <ul className=".error-group">
+        {arr.map(el => el)}
       </ul>
+    );
+  }
+
+  errorWrap(error, idx, errType){
+    return (
+      <li key={`error-${idx}`} className={`${errType}-error`}>
+        {error}
+      </li>
     );
   }
 
   // {this.renderErrors()}
   render() {
+    const errObjs = this.errorObjects();
     return (
       <div className="splash-signup-container">
-        {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
           <br/>
           <div className="splash-login-form">
             <br/>
             <label className="splash-form-label">
+              {errObjs['username']}
               <div className="splash-form-text">Username:</div>
               <input type="text"
                 value={this.state.username}
@@ -55,6 +92,7 @@ class SplashSignupForm extends React.Component {
             </label>
             <div>
               <label className="splash-form-label">
+                {errObjs['email']}
                 <div className="splash-form-text">Email:</div>
                 <input type="text"
                   value={this.state.email}
@@ -65,6 +103,7 @@ class SplashSignupForm extends React.Component {
               <br />
             </div>
             <label className="splash-form-label">
+              {errObjs['password']}
               <div className="splash-form-text">Password:</div>
               <input type="password"
                 value={this.state.password}
