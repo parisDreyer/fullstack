@@ -13,6 +13,16 @@ class SplashSignupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidUpdate (prevProps) {
+    if (prevProps.errors !== this.props.errors)
+     while (this.props.errors.length > 0) {this.props.errors.pop();}
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.errors !== this.props.errors)
+     while (this.props.errors.length > 0) {this.props.errors.pop();}
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -25,59 +35,11 @@ class SplashSignupForm extends React.Component {
     this.props.processForm(user);
   }
 
-  // errorObjects() {
-  //   let username = [];
-  //   let password = [];
-  //   let email = [];
-  //   let general = []
-  //   for (let i = 0; i < this.props.errors.length; ++i) {
-  //
-  //     let err = this.props.errors[i];
-  //
-  //     switch (err.split(' ')[0].toLowerCase()) {
-  //       case "username":
-  //       username.push(this.errorWrap(err, i, 'username'));
-  //       break;
-  //       case "email":
-  //       email.push(this.errorWrap(err, i, 'email'));
-  //       break;
-  //       case "password":
-  //       password.push(this.errorWrap(err, i, 'password'));
-  //       break;
-  //       default:
-  //       general.push(this.errorWrap(err, i, 'general'));
-  //     } // end switch
-  //
-  //   } // end map
-  //   return({
-  //     username: this.arrContents(username),
-  //     password: this.arrContents(password),
-  //     email: this.arrContents(email),
-  //     general: this.arrContents(general)
-  //   });
-  // } // end errorObjects
-  //
-  // arrContents(arr){
-  //   return (
-  //     <ul className=".error-group">
-  //       {arr.map(el => el)}
-  //     </ul>
-  //   );
-  // }
-  //
-  // errorWrap(error, idx, errType){
-  //   return (
-  //     <li key={`error-${idx}`} className={`${errType}-error`}>
-  //       {error}
-  //     </li>
-  //   );
-  // }
-
-  // {this.renderErrors()}
   render() {
     const errObjs = errorsToObjects(this.props.errors);
     return (
       <div className="splash-signup-container">
+        {errObjs['general']}
         <form onSubmit={this.handleSubmit}>
           <br/>
           <div className="splash-login-form">

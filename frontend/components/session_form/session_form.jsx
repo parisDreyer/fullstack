@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import AsideNav from '../nav/aside_nav';
+import errorsToObjects from '../../util/errors_to_objects';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -10,6 +11,16 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidUpdate (prevProps) {
+    if (prevProps.errors !== this.props.errors)
+     while (this.props.errors.length > 0) {this.props.errors.pop();}
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.errors !== this.props.errors)
+     while (this.props.errors.length > 0) {this.props.errors.pop();}
   }
 
   update(field) {
@@ -22,28 +33,18 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
-    // this.props.history.push('/');
-  }
-
-  renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
   }
 
   render() {
+    const errObjs = errorsToObjects(this.props.errors);
     let signupInput = (<br />);
     if(this.props.formType === 'signup'){
       signupInput = (
         <div>
-          <label>Email:
+          <label>
+            Email:
             <br />
+            {errObjs['email']}
             <input type="text"
               value={this.state.email}
               onChange={this.update('email')}
@@ -61,14 +62,15 @@ class SessionForm extends React.Component {
         <div className="explanation-text">
           Stack Inferno is trying to be a part of the StackExchange a network of 174 <a href="https://stackexchange.com/sites">communities</a>.
         </div>
+        {errObjs['general']}
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
           Please {this.props.formType} or {this.props.navLink}
-          {this.renderErrors()}
           <div className="login-form">
             <br/>
             <label>Username:
               <br />
+              {errObjs['username']}
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
@@ -78,6 +80,7 @@ class SessionForm extends React.Component {
             {signupInput}
             <label>Password:
               <br />
+              {errObjs['password']}
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}

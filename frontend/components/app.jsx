@@ -9,12 +9,8 @@ import {
 } from 'react-router-dom';
 
 
-// import AsideNav from './nav/aside_nav';
 import SignupFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
-import SplashSignupContainer from './splash/splash_container';
-// import RenderSplash from './splash/render_splash';
-
 
 import HeaderContainer from './nav/header_container';
 import SearchContainer from './search/search_container';
@@ -23,32 +19,7 @@ import QuestionFormContainer from './question_form/question_form_container';
 import {AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
-// function renderSplash({user}){
-//   if(!user && window.location.toString().match(/\/#\/.*$/)[0] === "/#/")
-//   {
-//     return (
-//       <div className="old-hero">
-//         <div className="splash-explanation-text">
-//           <h3>Learn, Share, Build</h3>
-//           <p>
-//             Each month, over 50 million denizens come to Stack Inferno to learn, share
-//             their knowledge, and maunder through eternity. Join the world’s largest denizen
-//             community.
-//           </p>
-//         </div>
-//         <div className="old-hero-background"></div>
-//         <SplashSignupContainer />
-//       </div>
-//
-//     );
-//   } else return (<div></div>);
-// }
-
-// { renderSplash(user) }
-// <RenderSplash state={state} />
-// <div className="content">
-//   <AsideNav links={1}/>
-const App = (state) => (
+const App = () => (
   <div>
     <HeaderContainer />
     <Switch>
@@ -61,6 +32,5 @@ const App = (state) => (
     </Switch>
     </div>
 );
-// </div>
 
 export default App;

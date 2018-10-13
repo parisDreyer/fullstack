@@ -5,7 +5,6 @@ import SplashSignupContainer from './splash_container';
 
 
 const RenderSplash = ({user}) => {
-  console.log(user);
   if(!user) //&& window.location.toString().match(/\/#\/.*$/)[0] === "/#/")
   {
     return (
