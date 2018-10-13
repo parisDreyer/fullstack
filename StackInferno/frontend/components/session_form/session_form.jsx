@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import AsideNav from '../nav/aside_nav';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -55,6 +56,8 @@ class SessionForm extends React.Component {
       );
     }
     return (
+      <div className="content">
+        <AsideNav links={1}/>
       <div className="login-form-container">
         <div className="explanation-text">
           Stack Inferno is trying to be a part of the StackExchange a network of 174 <a href="https://stackexchange.com/sites">communities</a>.
@@ -86,6 +89,7 @@ class SessionForm extends React.Component {
           </div>
         </form>
       </div>
+    </div>
     );
   }
 }

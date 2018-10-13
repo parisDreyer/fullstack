@@ -1,5 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
+import AsideNav from '../nav/aside_nav';
 
 class QuestionForm extends React.Component {
   constructor(props) {
@@ -25,6 +26,8 @@ class QuestionForm extends React.Component {
   }
   askAQuestion(component){
     return (
+      <div className="content">
+        <AsideNav links={1}/>
       <div className="single-question-show">
         <div className="header-section">
           <div className="question-index-header">
@@ -35,6 +38,7 @@ class QuestionForm extends React.Component {
           {component}
         </div>
       </div>
+    </div>
     );
   }
 
