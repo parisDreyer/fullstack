@@ -3,6 +3,6 @@ export const selectQuestion = ({questions}, questionId) => {
 }
 
 
-export const asArray = ({ questions }) => (
+export const questionsArray = ({ questions }) => (
   Object.keys(questions).map(key=> questions[key])
 );

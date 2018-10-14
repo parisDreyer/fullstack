@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
+import {fetchQuestions} from './actions/question_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -17,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  // window.store = store;
+  window.store = store;
+  fetchQuestions();
   const root = document.getElementById('root');
   window.root = root;
   window.store=store;

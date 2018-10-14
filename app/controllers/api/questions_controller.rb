@@ -23,12 +23,22 @@ class Api::QuestionsController < ApplicationController
     if @question.save
       render :show
     else
-      render json: @review, status: :unprocessable_entity
+      render json: @question, status: :unprocessable_entity
     end
   end
 
   def show
     @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = current_user.questions.find(params[:question][:id])
+
+    if @question && @question.update_attributes(question_params)
+      render :show
+    else
+      render json: @question.errors.full_messages, status: 422
+    end
   end
 
   def destroy
