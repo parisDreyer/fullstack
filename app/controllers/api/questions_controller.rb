@@ -42,9 +42,13 @@ class Api::QuestionsController < ApplicationController
   end
 
   def destroy
-    @question = Question.find(params[:id])
-    @question.destroy
-    render :index
+    @question = current_user.questions.find(params[:id])
+    if @question
+      @question.destroy
+      render :show
+    else
+      render json: "Cannot delete others questions!", status: 422
+    end
   end
 
 

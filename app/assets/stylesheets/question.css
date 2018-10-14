@@ -19,7 +19,10 @@ div.new-question-container {
 
 }
 
-.question-show-footer{}
+.question-body-footer{
+  display: flex;
+  justify-content: space-between;
+}
 .question-index-header h1{
   font-size: 2em;
 }

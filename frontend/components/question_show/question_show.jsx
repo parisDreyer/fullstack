@@ -11,9 +11,16 @@ class QuestionShow extends React.Component{
       title: '',
       body: ''
     }
+    this.deleteQuestion = this.deleteQuestion.bind(this);
   }
   componentDidMount(){
     this.props.fetchQuestion(this.props.questionId);
+  }
+
+  deleteQuestion(){
+    this.props.deleteQuestion(this.props.questionId);
+    this.setState({ ['title']: 'deleted', ['body']: 'deleted'});
+    this.props.history.push('/');
   }
   render() {
     return(
@@ -30,7 +37,12 @@ class QuestionShow extends React.Component{
             {this.props.question.body}
             <br />
             <br />
-            <Link to={`/questions/${this.props.questionId}/edit`}>edit</Link>
+            <div className="question-body-footer">
+              <Link to={`/questions/${this.props.questionId}/edit`}>edit</Link>
+              <button onClick={this.deleteQuestion} className="footer-button">
+                delete
+              </button>
+            </div>
           </div>
         </div>
       </div>

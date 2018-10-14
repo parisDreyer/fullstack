@@ -30,6 +30,8 @@ class Question < ApplicationRecord
       end
     elsif lim
       self.limit(lim)
+    else
+      self.all
     end
   end
 

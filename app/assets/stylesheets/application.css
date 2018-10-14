@@ -68,12 +68,12 @@ h1, h5 {
   margin-bottom: 0px;
 }
 
-a:hover, .header-button:hover{
+a:hover, .header-button:hover, .footer-button:hover{
   color: #005999;
   text-decoration: none;
 }
 
-a, .header-button {
+a, .header-button, .footer-button {
   color: #07c;
   cursor: pointer;
 }

@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
 
-import { fetchQuestion } from '../../actions/question_actions';
+import {
+  fetchQuestion,
+  deleteQuestion
+} from '../../actions/question_actions';
 import { selectQuestion} from '../../reducers/selectors';
 import QuestionShow from './question_show';
 
@@ -14,7 +17,8 @@ const mapStateToProps = (state, {match}) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchQuestion: id => dispatch(fetchQuestion(id))
+  fetchQuestion: id => dispatch(fetchQuestion(id)),
+  deleteQuestion: id => dispatch(deleteQuestion(id))
 });
 
 export default connect(

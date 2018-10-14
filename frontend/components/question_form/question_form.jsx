@@ -27,7 +27,7 @@ class QuestionForm extends React.Component {
       this.setState({ ['title']: nextProps.question.title,
         ['body']:nextProps.question.body,
         ['id']:nextProps.question.id
-      })
+      });
     }
   }
 
@@ -97,6 +97,8 @@ class QuestionForm extends React.Component {
       this.navigateToSearch();
     }
   }
+
+
   render(){
     const { title, body } = this.state;
     return(
