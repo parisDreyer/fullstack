@@ -23,10 +23,10 @@ export const createQuestion = questionForm => (
   })
 );
 
-export const updateQuestion = questionForm => (
+export const updateQuestion = question => (
   $.ajax({
+    url: `api/questions/${question.id}`,
     method: 'PATCH',
-    url: `api/questions/${questionForm.id}`,
-    data: questionForm
+    data: {question}
   })
 );

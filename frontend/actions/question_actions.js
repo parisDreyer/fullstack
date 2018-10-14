@@ -33,7 +33,8 @@ export const createQuestion = question => dispatch => (
 );
 
 export const updateQuestion = question => dispatch => (
-  APIUtil.updateQuestion(question).then(question => (
+  APIUtil.updateQuestion(question)
+  .then(question =>
     dispatch(receiveQuestion(question))
-  ))
+  )
 );

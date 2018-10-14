@@ -6,7 +6,6 @@ import QuestionEdit from './question_edit';
 
 const mapStateToProps = (state, {match}) => {
   const questionId = parseInt(match.params.questionId);
-  //selectQuestion(state.entities, questionId);
   return {
     questionId,
     question: state.entities.questions[match.params.questionId]

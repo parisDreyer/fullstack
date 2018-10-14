@@ -19,16 +19,21 @@ class QuestionShow extends React.Component{
     return(
       <div className="content">
         <AsideNav links={1}/>
-      <div className="single-question-show">
-        <div className="header-section">
-          <div className="question-index-header">
-            <h1 className="question-title">{this.props.question.title}</h1>
-            <Link to="/questions/new" className="link-button">Ask Question</Link>
+        <div className="single-question-show">
+          <div className="header-section">
+            <div className="question-index-header">
+              <h1 className="question-title">{this.props.question.title}</h1>
+              <Link to="/questions/new" className="link-button">Ask Question</Link>
+            </div>
+          </div>
+          <div className="question-body">
+            {this.props.question.body}
+            <br />
+            <br />
+            <Link to={`/questions/${this.props.questionId}/edit`}>edit</Link>
           </div>
         </div>
-        <div className="question-body">{this.props.question.body}</div>
       </div>
-    </div>
     );
   }
 }

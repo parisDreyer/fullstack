@@ -9,7 +9,6 @@ import EditQuestionFormContainer from '../question_form/edit_question_form_conta
 class QuestionEdit extends React.Component{
   constructor(props){
     super(props);
-    // console.log('q edit', this.props);
   }
   componentDidMount(){
     this.props.question || this.props.fetchQuestion(this.props.questionId);
@@ -18,7 +17,6 @@ class QuestionEdit extends React.Component{
     this.props.question || this.props.fetchQuestion(this.props.questionId);
   }
   render() {
-    // console.log('edit props', this.props);
     return(
         <EditQuestionFormContainer question={this.props.question}/>
     );
