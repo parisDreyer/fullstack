@@ -1,8 +1,8 @@
-export const fetchQuestions = data => (
+export const fetchQuestions = params => (
   $.ajax({
     method: 'GET',
     url: 'api/questions',
-    data
+    data: { bounds: params }
   })
 );
 

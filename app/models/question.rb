@@ -19,7 +19,7 @@ class Question < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
 
-  def self.in_bound(bounds)
+  def self.in_bounds(bounds)
     user_id = bounds[:user_id]
     lim = bounds[:limit]
     if user_id
