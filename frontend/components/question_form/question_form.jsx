@@ -5,14 +5,26 @@ import AsideNav from '../nav/aside_nav';
 class QuestionForm extends React.Component {
   constructor(props) {
     super(props);
+    console.log('props in q form', this.props);
+    let questionId = this.props.question && this.props.question.id;
+    let title = this.props.question && this.props.question.title;
+    let body = this.props.question && this.props.question.body;
     this.state={
       categoryId: null,
+      questionId: questionId || null,
       userId: this.props.userId,
-      title: '',
-      body: '',
+      title: title || '',
+      body: body || '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.navigateToSearch = this.navigateToSearch.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.question){
+      this.setState({ ['title']: nextProps.question.title,
+        ['body']:nextProps.question.body})
+    }
   }
 
   navigateToSearch() {
@@ -31,7 +43,7 @@ class QuestionForm extends React.Component {
       <div className="single-question-show">
         <div className="header-section">
           <div className="question-index-header">
-            <h1 className="question-title">Ask A Question</h1>
+            <h1 className="question-title">{this.props.formType} A Question</h1>
           </div>
         </div>
         <div className="question-body">
@@ -49,7 +61,7 @@ class QuestionForm extends React.Component {
     formData.append('question[userId]', this.state.userId);
     formData.append('question[title]', this.state.title);
     formData.append('question[body]', this.state.body);
-    this.props.createQuestion(formData);
+    this.props.questionAction(formData);
     this.navigateToSearch();
   }
   render(){
@@ -81,7 +93,7 @@ class QuestionForm extends React.Component {
               </div>
             </label>
             <br />
-            <input type="submit" value="Ask Question"
+            <input type="submit" value={`${this.props.formType} Question`}
               className="new-question-button" />
           </form>
         )}

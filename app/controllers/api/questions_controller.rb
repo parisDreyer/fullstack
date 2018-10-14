@@ -32,7 +32,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def update
-    @question = current_user.questions.find(params[:question][:id])
+    @question = Question.find(params[:id])
 
     if @question && @question.update_attributes(question_params)
       render :show

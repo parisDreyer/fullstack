@@ -22,3 +22,11 @@ export const createQuestion = questionForm => (
     processData: false
   })
 );
+
+export const updateQuestion = questionForm => (
+  $.ajax({
+    method: 'PATCH',
+    url: `api/questions/${questionForm.id}`,
+    data: questionForm
+  })
+);

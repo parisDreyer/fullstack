@@ -3,6 +3,7 @@ import * as APIUtil from '../util/question_api_util';
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
 export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
 
+
 export const receiveQuestions = questions => ({
   type: RECEIVE_QUESTIONS,
   questions
@@ -27,6 +28,12 @@ export const fetchQuestion = (id) => dispatch => (
 
 export const createQuestion = question => dispatch => (
   APIUtil.createQuestion(question).then(question => (
+    dispatch(receiveQuestion(question))
+  ))
+);
+
+export const updateQuestion = question => dispatch => (
+  APIUtil.updateQuestion(question).then(question => (
     dispatch(receiveQuestion(question))
   ))
 );

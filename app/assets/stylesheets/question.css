@@ -38,12 +38,14 @@ div.new-question-container {
   padding: 2em;
 }
 
+
 .question-body{
   color: black;
 }
 
 .index-item-title:hover{
     color: #3af;
+    cursor: pointer;
 }
 
 .index-item-title:visited{
