@@ -8,8 +8,7 @@ class QuestionShow extends React.Component{
   constructor(props){
     super(props);
     this.state= {
-      title: '',
-      body: ''
+      buttonErrors: []
     }
     this.deleteQuestion = this.deleteQuestion.bind(this);
   }
@@ -18,9 +17,13 @@ class QuestionShow extends React.Component{
   }
 
   deleteQuestion(){
-    this.props.deleteQuestion(this.props.questionId);
-    this.setState({ ['title']: 'deleted', ['body']: 'deleted'});
-    this.props.history.push('/');
+    if(this.props.user && this.props.question.user_id === this.props.user.id)
+    {
+      this.props.deleteQuestion(this.props.questionId);
+      this.props.history.push('/');
+    } else {
+      this.setState({ ['buttonErrors']: ['cannot delete other users\' questions' ]})
+    }
   }
   render() {
     return(
@@ -39,9 +42,12 @@ class QuestionShow extends React.Component{
             <br />
             <div className="question-body-footer">
               <Link to={`/questions/${this.props.questionId}/edit`}>edit</Link>
-              <button onClick={this.deleteQuestion} className="footer-button">
-                delete
-              </button>
+              <div>
+                <div className="error-group">{this.state.buttonErrors.map(e => `${e} `)}</div>
+                <button onClick={this.deleteQuestion} className="footer-button">
+                  delete
+                </button>
+              </div>
             </div>
           </div>
         </div>
