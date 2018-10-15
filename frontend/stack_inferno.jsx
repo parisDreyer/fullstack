@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
+  $('head').append(window.images.logo);
   window.store = store;
   fetchQuestions();
   const root = document.getElementById('root');
