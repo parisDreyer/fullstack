@@ -1,8 +1,15 @@
+
+<script type="text/javascript">
+  window.images = {
+    logo: "<%= image_url('rings_of-hell.jpeg') %>",
+    heroBanner: "<%= image_url('gustave_dore.jpg') %>"
+  }
+</script>
 <% if logged_in? %>
-  <script type="text/javascript" id="current-user">
+<script type="text/javascript" id="current-user">
   window.currentUser = <%= render("api/users/user.json.jbuilder",
     user: current_user).html_safe %>
-  </script>
+</script>
 <% end %>
 
 <div id="root">

@@ -78,7 +78,8 @@
 }
 
 .left-sidebar-sticky-container{
-  position: fixed;
+  position: sticky;
+  top: 4em;
 }
 @media screen and (max-width: 600px){
   .nav-bar{
