@@ -1,11 +1,11 @@
 import React from 'react';
-import QuestionIndexItem from './question_index_item';
+import IndexItem from './question_index_item';
 // import { Link } from 'react-router-dom';
 
 const QuestionIndex = ({ questions }) => (
   <div>
     {questions.map(question => (
-      <QuestionIndexItem
+      <IndexItem
         question={question}
         key={question.id}
       />

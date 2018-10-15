@@ -62,7 +62,7 @@ class AnswerShow extends React.Component{
           <br />
           <div className="question-body-footer">
 
-              <div className="error-group">{this.state.editButtonErrors.map(e => `${e} `)}</div>
+              <div className="right-error-group">{this.state.editButtonErrors.map(e => `${e} `)}</div>
               <button onClick={(e) => this.editAnswer(e)} className="footer-button">
                 edit
               </button>

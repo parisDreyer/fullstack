@@ -23,6 +23,7 @@ class AnswerForm extends React.Component {
       questionId: questionId,
       userId: this.props.user ? this.props.user.id : null,
       body: body || '',
+      buttonErrors: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.navigateToShow = this.navigateToShow.bind(this);
@@ -85,23 +86,25 @@ class AnswerForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if(this.props.formType === 'Edit'){
-      //formData.append('answer[id]', this.state.id)//this.props.answerAction(this.state);
-      this.props.answerAction({
-        id: this.state.id,
-        question_id: this.state.questionId,
-        body: this.state.body,
-        user_id: this.state.userId
-      });
-      this.props.resetRenderEditState();
-    } else {
-      const formData = new FormData();
-      formData.append('answer[user_id]', this.state.userId);
-      formData.append('answer[question_id]', this.state.questionId);
-      formData.append('answer[body]', this.state.body);
-      this.props.answerAction(formData);
-    }
-    this.navigateToShow();
+    if (this.state.userId){
+      if(this.props.formType === 'Edit'){
+        //formData.append('answer[id]', this.state.id)//this.props.answerAction(this.state);
+        this.props.answerAction({
+          id: this.state.id,
+          question_id: this.state.questionId,
+          body: this.state.body,
+          user_id: this.state.userId
+        });
+        this.props.resetRenderEditState();
+      } else {
+        const formData = new FormData();
+        formData.append('answer[user_id]', this.state.userId);
+        formData.append('answer[question_id]', this.state.questionId);
+        formData.append('answer[body]', this.state.body);
+        this.props.answerAction(formData);
+      }
+      this.navigateToShow();
+    } else { this.setState({['buttonErrors']:["must be logged in to answer questions"]}); }
   }
 
 
@@ -123,8 +126,13 @@ class AnswerForm extends React.Component {
               </div>
             </label>
             <br />
-            <input type="submit" value={`${this.props.formType}`}
-              className="new-question-button" />
+            <div>
+              <div className="right-error-group">
+                {this.state.buttonErrors.map(e =>`${e} `)}
+              </div>
+              <input type="submit" value={`${this.props.formType}`}
+                className="new-question-button" />
+            </div>
           </form>
         )}
       </div>
