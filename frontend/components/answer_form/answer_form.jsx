@@ -27,6 +27,7 @@ class AnswerForm extends React.Component {
   }
 
   navigateToShow() {
+    this.setState({ ['body']: ''})
     this.props.history.push(`/questions/${this.props.questionId}`);
   }
 
