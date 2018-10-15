@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom';
 import { ProtectedRoute} from '../../util/route_util';
 import AsideNav from '../nav/aside_nav';
 import NewAnswerFormContainer from '../answer_form/new_answer_form_container';
+import AnswerIndex from '../answer_index/answer_index';
+
 
 class QuestionShow extends React.Component{
   constructor(props){
@@ -15,6 +17,7 @@ class QuestionShow extends React.Component{
   }
   componentDidMount(){
     this.props.fetchQuestion(this.props.questionId);
+    this.props.fetchAnswers({question_id: this.props.questionId});
   }
 
   deleteQuestion(){
@@ -51,6 +54,7 @@ class QuestionShow extends React.Component{
               </div>
             </div>
           </div>
+          <AnswerIndex answers={this.props.answers}/>
           <NewAnswerFormContainer questionId={this.props.questionId} />
         </div>
       </div>

@@ -25,8 +25,4 @@ class IndexItem extends React.Component {
     );
   }
 }
-// remove body from render because not needed for index
-// <div className="index-item-body">
-//   {body||"No content!!!"}
-// </div>
 export default withRouter(IndexItem);

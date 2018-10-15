@@ -13,14 +13,3 @@ const QuestionIndex = ({ questions }) => (
   </div>
 );
 export default QuestionIndex;
-
-
-
-
-
-// <div className="question-index-header">
-//   <h1>Top Questions</h1>
-//   <Link to="/questions/new" className="link-button">Ask Question</Link>
-//
-//
-// </div>
