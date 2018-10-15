@@ -10,10 +10,8 @@ class IndexItem extends React.Component {
   render() {
     const { body } = this.props.answer;
     return (
-      <div className="question-index-item">
-        <div className="index-item-title">
-          {body || ""}
-        </div>
+      <div className="answer-index-item">
+        {body || ""}
       </div>
     );
   }
