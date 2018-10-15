@@ -19,6 +19,11 @@ class Question < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
 
+  has_many :answers,
+    primary_key: :id,
+    foreign_key: :question_id,
+    class_name: :Answer
+
   def self.in_bounds(bounds)
     user_id = bounds[:user_id]
     lim = bounds[:limit]
