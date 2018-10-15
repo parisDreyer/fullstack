@@ -9,17 +9,19 @@ class AnswerShow extends React.Component{
     this.state= {
       buttonErrors: []
     }
-    this.deleteAnswer = this.deleteAnswer.bind(this);
+    this.removeAnswer = this.removeAnswer.bind(this);
   }
   componentDidMount(){
     this.props.fetchAnswer(this.props.answerId);
   }
 
-  deleteAnswer(){
+  removeAnswer(e){
+    e.preventDefault();
     if(this.props.user && this.props.answer.user_id === this.props.user.id)
     {
       this.props.deleteAnswer(this.props.answerId);
-      this.props.history.push('/');
+      // this.props.history.push(`questions/${this.props.answer.question_id}`);
+      // this.props.history.push('/');
     } else {
       this.setState({ ['buttonErrors']: ['cannot delete other users\' answers' ]})
     }
@@ -27,19 +29,17 @@ class AnswerShow extends React.Component{
   render() {
     return(
       <div>
-        <div className="single-question-show">
-          <div className="question-body">
-            {this.props.answer.body}
-            <br />
-            <br />
-            <div className="question-body-footer">
+        <div className="question-body">
+          {this.props.answer.body}
+          <br />
+          <br />
+          <div className="question-body-footer">
 
-              <div>
-                <div className="error-group">{this.state.buttonErrors.map(e => `${e} `)}</div>
-                <button onClick={this.deleteAnswer} className="footer-button">
-                  delete
-                </button>
-              </div>
+            <div>
+              <div className="error-group">{this.state.buttonErrors.map(e => `${e} `)}</div>
+              <button onClick={(e)=>this.removeAnswer(e)} className="footer-button">
+                delete
+              </button>
             </div>
           </div>
         </div>

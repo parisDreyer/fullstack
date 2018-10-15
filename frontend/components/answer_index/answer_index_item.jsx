@@ -10,10 +10,18 @@ class IndexItem extends React.Component {
   render() {
     const { body } = this.props.answer;
     return (
-      <div className="answer-index-item">
-        {body || ""}
-      </div>
+        <AnswerShowContainer
+          history={this.props.history}
+          answerId={this.props.answer.id}
+          answer={this.props.answer}/>
     );
   }
 }
 export default withRouter(IndexItem);
+
+
+
+// <div className="answer-index-item">
+
+
+// {body || ""}

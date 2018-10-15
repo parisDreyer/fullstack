@@ -43,6 +43,16 @@ class Api::AnswersController < ApplicationController
     end
   end
 
+  def destroy
+    @answer = current_user.answers.find(params[:id])
+    if @answer
+      @answer.destroy
+      render :show
+    else
+      render json: "Cannot delete others answers!", status: 422
+    end
+  end
+
   private
   def answer_params
     params.require(:answer).permit(:user_id, :body, :question_id)
