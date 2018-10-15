@@ -13,7 +13,7 @@ class Api::QuestionsController < ApplicationController
 
   def index
     @questions = bounds ? Question.in_bounds(bounds) : Question.all
-    @questions.reverse!
+
     render :index
   end
 

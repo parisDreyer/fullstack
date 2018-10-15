@@ -29,9 +29,9 @@ class Answer < ApplicationRecord
     user_id = bounds[:user_id]
     question_id = bounds[:question_id]
     if user_id
-        self.where("user_id == ?", user_id)
+      self.where("user_id == ?", user_id).order(:updated_at)
     elsif question_id
-      self.where("question_id == ?", question_id)
+      self.where("question_id == ?", question_id).order(:updated_at)
     else
       "incomplete arguments error in Answer request"
     end

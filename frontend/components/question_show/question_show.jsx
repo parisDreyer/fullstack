@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 
 import { ProtectedRoute} from '../../util/route_util';
 import AsideNav from '../nav/aside_nav';
+import NewAnswerFormContainer from '../answer_form/new_answer_form_container';
 
 class QuestionShow extends React.Component{
   constructor(props){
@@ -50,6 +51,7 @@ class QuestionShow extends React.Component{
               </div>
             </div>
           </div>
+          <NewAnswerFormContainer questionId={this.props.questionId} />
         </div>
       </div>
     );

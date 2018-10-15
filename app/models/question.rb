@@ -29,14 +29,14 @@ class Question < ApplicationRecord
     lim = bounds[:limit]
     if user_id
       if lim
-        self.where("user_id == ?", user_id).limit(lim)
+        self.where("user_id == ?", user_id).limit(lim).order(:updated_at)
       else
-        self.where("user_id == ?", user_id)
+        self.where("user_id == ?", user_id).order(:updated_at)
       end
     elsif lim
-      self.limit(lim)
+      self.limit(lim).order(:created_at)
     else
-      self.all
+      self.all.order(:created_at)
     end
   end
 

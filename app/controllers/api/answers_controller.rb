@@ -15,7 +15,7 @@ class Api::AnswersController < ApplicationController
 
   def index
     @answers = bounds ? Answer.in_bounds(bounds) : "error -- no answers or incorrect request"
-    @answers.reverse!
+
     render :index
   end
 
@@ -45,7 +45,7 @@ class Api::AnswersController < ApplicationController
 
   private
   def answer_params
-    params.require(:answer).permit(:user_id, :answer_id, :body)
+    params.require(:answer).permit(:user_id, :body, :question_id)
   end
 
   def bounds
