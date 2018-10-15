@@ -38,7 +38,7 @@ export const createAnswer = answer => dispatch => (
   ))
 );
 
-export const updateAnswer = answer => dispatch => (
+export const updateAnswer = (answer) => dispatch => (
   APIUtil.updateAnswer(answer)
   .then(answer =>
     dispatch(receiveAnswer(answer))

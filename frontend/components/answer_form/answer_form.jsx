@@ -4,9 +4,20 @@ import {withRouter} from 'react-router-dom';
 class AnswerForm extends React.Component {
   constructor(props) {
     super(props);
-    let answerId = this.props.answerId;
-    let questionId = this.props.questionId;
-    let body = this.props.answer ? this.props.answer.body : '';
+
+    let answerId;
+    let questionId;
+    let body;
+
+    if(this.props.answer && this.props.formType === 'Edit'){
+      answerId = this.props.answer.id;
+      questionId = this.props.answer.question_id;
+      body = this.props.answer.body;
+    } else{
+      answerId = this.props.answerId;
+      questionId = this.props.questionId;
+      body = this.props.answer ? this.props.answer.body : '';
+     }
     this.state={
       id: answerId || null,
       questionId: questionId,
@@ -20,6 +31,8 @@ class AnswerForm extends React.Component {
   componentWillReceiveProps(nextProps){
     if(this.props.formType === 'Edit' && nextProps.answer){
       this.setState({
+        ['userId']:nextProps.answer.user_id,
+        ['questionId']:nextProps.answer.question_id,
         ['body']:nextProps.answer.body,
         ['id']:nextProps.answer.id
       });
@@ -72,15 +85,21 @@ class AnswerForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const formData = new FormData();
     if(this.props.formType === 'Edit'){
-      formData.append('answer[id]', this.state.id)//this.props.answerAction(this.state);
-    } //else{
+      //formData.append('answer[id]', this.state.id)//this.props.answerAction(this.state);
+      this.props.answerAction({
+        id: this.state.id,
+        question_id: this.state.questionId,
+        body: this.state.body,
+        user_id: this.state.userId
+      });
+    } else {
+      const formData = new FormData();
       formData.append('answer[user_id]', this.state.userId);
       formData.append('answer[question_id]', this.state.questionId);
       formData.append('answer[body]', this.state.body);
       this.props.answerAction(formData);
-    //}
+    }
     this.navigateToShow();
   }
 

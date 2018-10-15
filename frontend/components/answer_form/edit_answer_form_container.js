@@ -8,7 +8,7 @@ const mapStateToProps = (state, { user, answer}) => {
   return {
     userId: user.id,//state.entities.users[state.session.id].id,
     formType: 'Edit',
-    answer
+    answer: answer
   };
 };
 
