@@ -93,6 +93,7 @@ class AnswerForm extends React.Component {
         body: this.state.body,
         user_id: this.state.userId
       });
+      this.props.resetRenderEditState();
     } else {
       const formData = new FormData();
       formData.append('answer[user_id]', this.state.userId);
