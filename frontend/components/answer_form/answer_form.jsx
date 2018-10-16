@@ -5,24 +5,24 @@ class AnswerForm extends React.Component {
   constructor(props) {
     super(props);
 
-    let answerId;
-    let questionId;
-    let body;
+    // let answerId;
+    // let questionId;
+    // let body;
 
-    if(this.props.answer && this.props.formType === 'Edit'){
-      answerId = this.props.answer.id;
-      questionId = this.props.answer.question_id;
-      body = this.props.answer.body;
-    } else{
-      answerId = this.props.answerId;
-      questionId = this.props.questionId;
-      body = this.props.answer ? this.props.answer.body : '';
-     }
+    // if(this.props.answer && this.props.formType === 'Edit'){
+    //   answerId = this.props.answer.id;
+    //   questionId = this.props.answer.question_id;
+    //   body = this.props.answer.body;
+    // } else{
+      let answerId = this.props.answerId;
+      let questionId = this.props.questionId;
+      let body = this.props.answer ? this.props.answer.body : '';
+     // }
     this.state={
-      id: answerId || null,
+      id: answerId,
       questionId: questionId,
       userId: this.props.user ? this.props.user.id : null,
-      body: body || '',
+      body: body,
       buttonErrors: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
