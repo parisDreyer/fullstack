@@ -21,9 +21,11 @@ import QuestionEditContainer from './question_show/question_edit_container';
 import {AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
+
+
 const App = () => (
   <div>
-    <HeaderContainer />
+    <HeaderContainer inSearchQs={window.location.toString().includes('/questions/')}/>
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />

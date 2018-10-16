@@ -29,6 +29,14 @@ class HeaderContainer extends React.Component {
   }
 
   render() {
+
+    const renderNavBarSearch = !this.props.inSearchQs ? (
+      <form onSubmit={this.handleSearchClick} className="nav-search-bar-container">
+        <input className="nav-search-bar" type="text" />
+        <input type="submit" className="search-icon" value="> "/>
+      </form>
+    ) : (<div></div>);
+
     return (<header className="nav-bar">
     <ul className="header-nav">
       <li className="header-link">
@@ -41,10 +49,7 @@ class HeaderContainer extends React.Component {
             </div>stack <strong>inferno</strong>
           </div>
         </Link>
-        <form onSubmit={this.handleSearchClick} className="nav-search-bar-container">
-          <input className="nav-search-bar" type="text" />
-          <input type="submit" className="search-icon" value="> "/>
-        </form>
+        {renderNavBarSearch}
       </li>
       <GreetingContainer />
     </ul>
