@@ -53,9 +53,9 @@ class QuestionShow extends React.Component{
                   delete
                 </button>
               </div>
-              modified {timeSinceUpdate(this.props.question.updated_at)} hr:min:secs ago --
-
-              question by { this.props.question.user ? this.props.question.user.username : '__'}
+              posted {timeSinceUpdate(this.props.question.created_at)} hr:min:secs ago
+              on {this.props.question.created_at} --
+              by { this.props.question.user ? this.props.question.user.username : '__'}
             </div>
           </div>
           <AnswerIndex answers={this.props.answers}/>

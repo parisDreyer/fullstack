@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom';
 import { ProtectedRoute} from '../../util/route_util';
 import EditAnswerFormContainer from '../answer_form/edit_answer_form_container';
 
+import {timeSinceUpdate} from '../../util/calculation_utils';
+
 class AnswerShow extends React.Component{
   constructor(props){
     super(props);
@@ -70,6 +72,9 @@ class AnswerShow extends React.Component{
               <button onClick={(e)=>this.removeAnswer(e)} className="footer-button">
                 delete
               </button>
+              posted {timeSinceUpdate(this.props.answer.created_at)} hr:min:secs ago
+              on {this.props.answer.created_at} --
+              by { this.props.answer.user ? this.props.answer.user.username : '__'}
           </div>
         </div>
       </div>
