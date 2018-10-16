@@ -24,12 +24,7 @@ class SearchShow extends React.Component {
   }
 
   componentDidMount(){
-    this.props.updateFilter(
-      'text', this.state.text
-      // limit: this.props.limit,
-      // text: this.state.text,
-      // offset: this.props.offset,
-    );
+    this.props.updateFilter('text', this.state.text);
   }
 
   handleSearchClick(e){
@@ -37,10 +32,7 @@ class SearchShow extends React.Component {
     this.setState({
       text: e.target.children[0].value
     });
-    this.props.updateFilter('text', e.target.children[0].value
-      // limit: this.state.limit,
-      // offset: this.state.offset
-    );
+    this.props.updateFilter('text', e.target.children[0].value);
   }
 
   render(){
@@ -51,7 +43,7 @@ class SearchShow extends React.Component {
           <div className="main-content">
             <div className="header-section">
               <div className="question-index-header">
-                <h1>Top Questions</h1>
+                <h1>Search Results</h1>
                 <Link to="/questions/new" className="link-button">Ask Question</Link>
               </div>
               <div className="limit-specs">
@@ -59,9 +51,9 @@ class SearchShow extends React.Component {
                   limit={this.props.limit}
                   updateFilter={this.props.updateFilter}
                   />
-                <form onSubmit={this.handleSearchClick} className="nav-search-bar-container">
-                  <input className="nav-search-bar" type="text" />
-                  <input type="submit" className="search-icon" value="> "/>
+                <form onSubmit={this.handleSearchClick} className="main-search-container">
+                  <input className="main-search-bar" type="text" />
+                  <input type="submit" className="main-search-button" value="search"/>
                 </form>
               </div>
 
