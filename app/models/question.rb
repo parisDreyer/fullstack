@@ -26,17 +26,16 @@ class Question < ApplicationRecord
 
   def self.in_bounds(bounds)
     user_id = bounds[:user_id]
-    lim = bounds[:limit]
-    if user_id
-      if lim
-        self.where("user_id == ?", user_id).limit(lim).order(:updated_at)
-      else
-        self.where("user_id == ?", user_id).order(:updated_at)
-      end
-    elsif lim
-      self.limit(lim).order(:created_at)
+    lim = bounds[:limit] || 25
+    text = bounds[:text] || ''
+    offs = bounds[:offset] || 0
+
+    if text
+      self.where("title LIKE ?", "%#{text}%").limit(lim).offset(offs).order(updated_at: :desc)
+    elsif user_id
+      self.where("user_id == ?", user_id).limit(lim).offset(offs).order(:updated_at)
     else
-      self.all.order(:created_at)
+      self.all.order.limit(lim).offset(offs).(created_at: :desc)
     end
   end
 

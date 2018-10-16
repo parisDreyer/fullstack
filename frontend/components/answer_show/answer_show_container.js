@@ -10,8 +10,6 @@ import AnswerShow from './answer_show';
 const mapStateToProps = (state, {answer, answerId}) => {
 
   const user = state.entities.users[state.session.id];
-  //const answerId = answerId;//parseInt(match.params.answerId);
-  //const answer = answer;//selectAnswer(state.entities, answerId);
   return {
     user,
     answerId,

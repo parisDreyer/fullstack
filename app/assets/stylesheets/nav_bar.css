@@ -22,6 +22,7 @@
   box-shadow: 0px 0.5px lightgrey;
 }
 
+
 .header-link{
   padding-top: 10px;
 }
@@ -99,12 +100,83 @@ a.grey-beige{
   color: #535a60;
 }
 
+.nav-search-bar{
+  margin-left: 2em;
+  height: 2.4em;
+  margin-top: -0.3em;
+  border-width: 1px;
+  border-color: #c8ccd0;
+  background-color: #FFF;
+  color: #3b4045;
+  font-size: 12px;
+  width: 24em;
+  border-radius: 4px;
+}
+/* input[type='submit'] */
+.search-icon{
+  display: none;
+}
+
+.nav-search-bar:focus{
+  background-color:#FFF;
+  border-color: #0095ff;
+  box-shadow: inset 0 2px 2px #fafafb 0 0 5px rgba(0, 119, 204, 0.4);
+  border: 1px solid #66bfff;
+  transition: all 600ms cubic-bezier(.165, .84, .44, 1);
+}
+/* input[type='submit'] */
+.nav-search-bar:focus ~ input[type='submit'].search-icon{
+
+  display:inline;
+  font-weight: normal;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: none;
+  color: #FFF;
+  background-color: #0095ff;
+  border: 1px solid #07c;
+  box-shadow: inset 0 1px 0 #66bfff;
+  height: 1.8em;
+  width: 2em;
+  position: absolute;
+  right: 0;
+  top: 55%;
+  transform: translate(17.5em,-50%);
+  border-radius: 0 3px 3px 0;
+  z-index: 4000;
+  padding: 0 12px;
+  transition: 200ms cubic-bezier(.165, .84, .44, 1);
+
+}
+
+.nav-search-bar:focus ~ img.search-icon{
+  display:inline;
+  border: 1px solid transparent;
+  border-radius: 3px;
+
+  height: 1.9em;
+  width: 4.2em;
+  position: absolute;
+
+
+  transform: translate(-2.85em,-50%);
+  top: 55%;
+  z-index: 4000;
+  padding: 0 12px;
+}
+.nav-search-bar:focus ~ img.search-icon:hover{
+  z-index: 3999;
+}
+.nav-search-bar:focus ~ input[type='submit'].search-icon:hover{
+  background-color: darkred;
+}
+
 @media screen and (max-width: 600px){
   .nav-bar{
     position: fixed;
     width: 100%;
     max-width: 600px;
-    height: 52px;
+    height: 60px;
   }
   .header-nav{
     display: flex;
@@ -116,7 +188,7 @@ a.grey-beige{
     border-right: 2px solid #ccc;
     background-color: #fafafb;
     transition: box-shadow cubic-bezier(.165, .84, .44, 1) .25s;
-    height: 52px;
+    height: 60px;
     box-sizing: border-box;
     font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
     border-top: 4px solid #F48024;
@@ -125,7 +197,10 @@ a.grey-beige{
 
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 450px){
+  .nav-search-bar-container:focus, .nav-search-bar{
+    display: none;
+  }
   .left-sidebar{
     display: none;
   }

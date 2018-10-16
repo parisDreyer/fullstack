@@ -5,6 +5,7 @@ import GreetingContainer from '../greeting/greeting_container';
 
 
 
+
 const HeaderContainer = () => (
       <header className="nav-bar">
         <ul className="header-nav">
@@ -18,6 +19,11 @@ const HeaderContainer = () => (
                 </div>stack <strong>inferno</strong>
               </div>
             </Link>
+            <label className="nav-search-bar-container">
+              <input className="nav-search-bar" type="text" />
+              <input type="submit" onSubmit={() => {}} className="search-icon" value=""/>
+              <img src={window.images.searchIcon} className="search-icon" alt="Search" />
+            </label>
           </li>
           <GreetingContainer />
         </ul>
