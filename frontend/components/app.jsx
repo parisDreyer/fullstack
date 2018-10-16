@@ -14,6 +14,7 @@ import LogInFormContainer from './session_form/login_form_container';
 
 import HeaderContainer from './nav/header_container';
 import SearchContainer from './search/search_container';
+import SearchShowContainer from './search/search_show_container';
 import QuestionShowContainer from './question_show/question_show_container';
 import QuestionFormContainer from './question_form/question_form_container';
 import QuestionEditContainer from './question_show/question_edit_container';
@@ -26,6 +27,7 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <Route exact path="/questions/" component={SearchShowContainer} />
       <ProtectedRoute exact path="/questions/new" component={QuestionFormContainer} />
       <ProtectedRoute path="/questions/:questionId/edit" component={QuestionEditContainer} />
       <Route path="/questions/:questionId" component={QuestionShowContainer} />

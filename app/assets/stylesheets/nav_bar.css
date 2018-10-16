@@ -100,6 +100,10 @@ a.grey-beige{
   color: #535a60;
 }
 
+.nav-search-bar-container{
+  display: inline-block;
+}
+
 .nav-search-bar{
   margin-left: 2em;
   height: 2.4em;
@@ -113,9 +117,9 @@ a.grey-beige{
   border-radius: 4px;
 }
 /* input[type='submit'] */
-.search-icon{
+/* .search-icon, input[type='submit'].search-icon{
   display: none;
-}
+} */
 
 .nav-search-bar:focus{
   background-color:#FFF;
@@ -124,10 +128,10 @@ a.grey-beige{
   border: 1px solid #66bfff;
   transition: all 600ms cubic-bezier(.165, .84, .44, 1);
 }
-/* input[type='submit'] */
-.nav-search-bar:focus ~ input[type='submit'].search-icon{
 
-  display:inline;
+.search-icon, input[type='submit'].search-icon, .nav-search-bar:focus ~ input[type='submit'].search-icon, input[type='submit'].search-icon:focus{
+
+  display:inline-block;
   font-weight: normal;
   border: 1px solid transparent;
   border-radius: 3px;
@@ -149,8 +153,9 @@ a.grey-beige{
 
 }
 
+
 .nav-search-bar:focus ~ img.search-icon{
-  display:inline;
+  display:inline-block;
   border: 1px solid transparent;
   border-radius: 3px;
 
@@ -164,19 +169,22 @@ a.grey-beige{
   z-index: 4000;
   padding: 0 12px;
 }
-.nav-search-bar:focus ~ img.search-icon:hover{
+ .nav-search-bar:focus ~ img.search-icon:hover{
   z-index: 3999;
 }
-.nav-search-bar:focus ~ input[type='submit'].search-icon:hover{
+.nav-search-bar:focus ~ input[type='submit'].search-icon:hover, .nav-search-bar ~ input[type='submit'].search-icon:hover{
   background-color: darkred;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 800px){
   .nav-bar{
     position: fixed;
     width: 100%;
     max-width: 600px;
     height: 60px;
+  }
+  .nav-search-bar-container, .nav-search-bar{
+    display: none;
   }
   .header-nav{
     display: flex;
