@@ -78,10 +78,27 @@
   transition: box-shadow ease-in-out .1s,transform ease-in-out .1s;
 }
 
+.space-li-header {
+  font-weight: bolder;
+  margin-left: -0.5em;
+}
+
 .left-sidebar-sticky-container{
   position: sticky;
   top: 4em;
 }
+
+.space-li{
+  padding-top: 1.4em;
+
+}
+.grey-beige{
+  color: #535a60;
+}
+a.grey-beige{
+  color: #535a60;
+}
+
 @media screen and (max-width: 600px){
   .nav-bar{
     position: fixed;
