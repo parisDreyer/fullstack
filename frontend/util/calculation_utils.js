@@ -10,3 +10,8 @@ export function millisecsToTime(duration) {
 
   return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
 }
+
+
+export function timeSinceUpdate(update_time){
+  return millisecsToTime(Date.now() - Date.parse(update_time));
+}

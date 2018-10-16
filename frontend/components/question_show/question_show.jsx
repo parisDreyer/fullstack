@@ -5,6 +5,7 @@ import { ProtectedRoute} from '../../util/route_util';
 import AsideNav from '../nav/aside_nav';
 import NewAnswerFormContainer from '../answer_form/new_answer_form_container';
 import AnswerIndex from '../answer_index/answer_index';
+import {timeSinceUpdate} from '../../util/calculation_utils';
 
 
 class QuestionShow extends React.Component{
@@ -52,6 +53,9 @@ class QuestionShow extends React.Component{
                   delete
                 </button>
               </div>
+              modified {timeSinceUpdate(this.props.question.updated_at)} hr:min:secs ago --
+
+              question by { this.props.question.user ? this.props.question.user.username : '__'}
             </div>
           </div>
           <AnswerIndex answers={this.props.answers}/>

@@ -1,8 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
-import {millisecsToTime} from '../../util/calculation_utils';
-
-// import QuestionShowContainer from '../question_show/question_show_container';
+import {timeSinceUpdate} from '../../util/calculation_utils';
 
 class IndexItem extends React.Component {
   constructor(props) {
@@ -23,9 +21,8 @@ class IndexItem extends React.Component {
           {title || "No title!"}
         </div>
         <div className="index-item-footer">
-          modified {
-            millisecsToTime(Date.now() - Date.parse(updated_at))
-          } ago -- question by {user.username || "anon"}
+          modified {timeSinceUpdate(updated_at)} hr:min:secs ago --
+          question by {user.username || "anon"}
         </div>
       </div>
     );
