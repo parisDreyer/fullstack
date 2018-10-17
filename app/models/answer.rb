@@ -25,6 +25,11 @@ class Answer < ApplicationRecord
   foreign_key: :question_id,
   class_name: :Question
 
+  has_many :votes,
+  primary_key: :id,
+  foreign_key: :answer_id,
+  class_name: :Answer
+
   def self.in_bounds(bounds)
     user_id = bounds[:user_id]
     question_id = bounds[:question_id]

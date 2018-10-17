@@ -16,13 +16,18 @@ class Question < ApplicationRecord
   validates :title, length: { minimum: 1 }
 
   belongs_to :user,
-    foreign_key: :user_id,
-    class_name: :User
+  foreign_key: :user_id,
+  class_name: :User
 
   has_many :answers,
-    primary_key: :id,
-    foreign_key: :question_id,
-    class_name: :Answer
+  primary_key: :id,
+  foreign_key: :question_id,
+  class_name: :Answer
+
+  has_many :votes,
+  primary_key: :id,
+  foreign_key: :question_id,
+  class_name: :Question
 
   def self.in_bounds(bounds)
     user_id = bounds[:user_id]
