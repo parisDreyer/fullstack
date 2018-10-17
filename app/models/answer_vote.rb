@@ -24,8 +24,18 @@ class AnswerVote < ApplicationRecord
 
   def self.find_by_params(params)
     return nil unless params[:answer_vote]
-    self.where("answer_votes.user_id = ? AND answer_votes.answer_id = ?",
-      params[:answer_vote][:user_id],
-      params[:answer_vote][:answer_id])
+    user_id = params[:answer_vote][:user_id].to_i
+    answer_id = params[:answer_vote][:answer_id].to_i
+    self.where("answer_votes.user_id = ? AND answer_votes.answer_id = ?", user_id, answer_id)
+  end
+
+  def self.vote_in_range(vote)
+    vote = vote.to_i
+    if vote < -1
+      vote = -1
+    elsif vote > 1
+      vote = 1
+    end
+    vote
   end
 end

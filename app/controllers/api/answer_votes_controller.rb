@@ -32,7 +32,12 @@ class Api::AnswerVotesController < ApplicationController
 
   def update(answer)
     answer ||= AnswerVote.find_by_params(params)
-    if answer && answer.update_attributes(answer_vote_params)
+    update_params = answer_vote_params
+    if update_params[:vote]
+      update_params[:vote] = AnswerVote.vote_in_range(
+        update_params[:vote].to_i + answer[:vote].to_i)
+    end
+    if answer && answer.update_attributes(update_params)
       render :index
     end
   end
