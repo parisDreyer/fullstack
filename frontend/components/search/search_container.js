@@ -10,7 +10,6 @@ const mapStateToProps = state => ({
   offset: state.ui.filters.offset,
   text: '',
   user: state.entities.users[state.session.id]
-  //NOTE add a filter in for searching by question title text
 });
 
 const mapDispatchToProps = dispatch => ({

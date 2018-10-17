@@ -6,7 +6,7 @@ const AsideNav = navLinks => (
       <div className="space-li-header">Public</div>
       <ul>
         <li className="space-li">
-          <Link to="/questions" className="grey-beige">
+          <Link to="/" className="grey-beige">
             <strong>HOME</strong>
           </Link>
         </li>
@@ -23,7 +23,7 @@ const AsideNav = navLinks => (
           </Link>
         </li>
         <li className="space-li">
-          <Link to="/questions" className="grey-beige">
+          <Link to="/jobs" className="grey-beige">
             <strong>Jobs</strong>
           </Link>
         </li>

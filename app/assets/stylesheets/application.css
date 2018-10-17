@@ -66,6 +66,31 @@ body {
   display: inline-flex;
   position: relative;
 }
+
+.center-text-page  h1{
+  font-size: 10em;
+}
+.center-text-page  h2{
+  font-size: 8em;
+}
+.center-text-page  h3{
+  font-size: 6em;
+}
+.center-text-page  h4{
+  font-size: 4em;
+}
+
+.center-text-page{
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  margin-left: 4em;
+  width: inherit;
+  background: rgba(252, 246, 232, 0.5);
+  color: darkred;
+}
 header {
 }
 

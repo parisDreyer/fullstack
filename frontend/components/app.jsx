@@ -12,6 +12,7 @@ import {
 import SignupFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 
+import JobsContainer from './jobs/jobs_container';
 import HeaderContainer from './nav/header_container';
 import SearchContainer from './search/search_container';
 import SearchShowContainer from './search/search_show_container';
@@ -33,10 +34,11 @@ const App = () => (
       <ProtectedRoute exact path="/questions/new" component={QuestionFormContainer} />
       <ProtectedRoute path="/questions/:questionId/edit" component={QuestionEditContainer} />
       <Route path="/questions/:questionId" component={QuestionShowContainer} />
+      <Route path="/jobs" component={JobsContainer} />
       <Route exact path="/" component={SearchContainer} />
       <Redirect to="/" />
     </Switch>
-    </div>
+  </div>
 );
 
 export default App;
