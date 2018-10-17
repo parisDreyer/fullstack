@@ -1,2 +1,2 @@
-json.answerId @question_id
+json.questionId @question_id
 json.votes @question_sum

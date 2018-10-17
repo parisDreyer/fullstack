@@ -10,7 +10,7 @@
 
 class QuestionVote < ApplicationRecord
   validates :question_id, :user_id, presence: true
-  validates :vote, inclusion => -1..1
+  validates :vote, inclusion: -1..1
 
 
   belongs_to :user,

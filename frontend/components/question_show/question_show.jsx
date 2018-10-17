@@ -57,7 +57,7 @@ class QuestionShow extends React.Component{
     return(
       <div className="question-body">
         <div className="float-display">
-          <QuestionVotesContainer questionId={this.props.question.id} />
+          <QuestionVotesContainer questionId={this.props.questionId} />
           <div>
             {this.props.question.body}
             <br />

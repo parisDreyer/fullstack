@@ -2,7 +2,7 @@ export const fetchQuestionVotes = questionId => (
   $.ajax({
     method: 'GET',
     url: 'api/question_votes',
-    data: {question_vote: { question_id: questionId}}
+    data: { question_vote: { question_id: questionId}}
   })
 );
 
