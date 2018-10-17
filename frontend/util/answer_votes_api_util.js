@@ -7,13 +7,17 @@ export const fetchAnswerVotes = answerId => (
 );
 
 
-export const createAnswerVote = answerForm => (
+export const createAnswerVote = answerVote => (
   $.ajax({
     method: 'POST',
     url: 'api/answer_votes',
-    data: answerForm,
-    contentType: false,
-    processData: false
+    data: { answer_vote: {
+        user_id: answerVote.userId,
+        answer_id: answerVote.answerId,
+        vote: answerVote.vote
+      }
+    },
+
   })
 );
 

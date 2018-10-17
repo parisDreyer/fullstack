@@ -23,8 +23,9 @@ class AnswerVote < ApplicationRecord
   class_name: :Answer
 
   def self.find_by_params(params)
-    self.where("user_id = $1 AND answer_id = $2",
-      params[:answer][:user_id],
-      params[:answer][:answer_id])
+    return nil unless params[:answer_vote]
+    self.where("answer_votes.user_id = ? AND answer_votes.answer_id = ?",
+      params[:answer_vote][:user_id],
+      params[:answer_vote][:answer_id])
   end
 end
