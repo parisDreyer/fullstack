@@ -21,4 +21,10 @@ class AnswerVote < ApplicationRecord
   primary_key: :id,
   foreign_key: :answer_id,
   class_name: :Answer
+
+  def self.find_by_params(params)
+    self.where("user_id = $1 AND answer_id = $2",
+      params[:answer][:user_id],
+      params[:answer][:answer_id])
+  end
 end

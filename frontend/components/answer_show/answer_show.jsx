@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 import { ProtectedRoute} from '../../util/route_util';
 import EditAnswerFormContainer from '../answer_form/edit_answer_form_container';
-
+import AnswerVotesContainer from '../answer_votes/answer_votes_container';
 import {timeSinceUpdate} from '../../util/calculation_utils';
 
 class AnswerShow extends React.Component{
@@ -27,8 +27,6 @@ class AnswerShow extends React.Component{
     if(this.props.user && this.props.answer.user_id === this.props.user.id)
     {
       this.props.deleteAnswer(this.props.answerId);
-      // this.props.history.push(`questions/${this.props.answer.question_id}`);
-      // this.props.history.push('/');
     } else {
       this.setState({ ['deleteButtonErrors']: ['cannot delete other users\' answers' ]})
     }
@@ -63,7 +61,7 @@ class AnswerShow extends React.Component{
           <br />
           <br />
           <div className="question-body-footer">
-
+              <AnswerVotesContainer answerId={this.props.answer.id}/>
               <div className="right-error-group">{this.state.editButtonErrors.map(e => `${e} `)}</div>
               <button onClick={(e) => this.editAnswer(e)} className="footer-button">
                 improve this answer

@@ -1,12 +1,14 @@
 class Api::AnswerVotesController < ApplicationController
 
   def index
-    @answer_sum = Answer.where('answer_id = ?', answer.answer_id).sum(:vote)
+    @answer_id = params[:answer_id] || answer_params[:answer_id]
+
+    @answer_sum = AnswerVote.where('answer_id = ?', @answer_id).sum(:vote)
     render :index
   end
 
   def create
-    answer = Answer.new(answer_params)
+    answer = AnswerVote.new(answer_params)
     if(answer.save)
       render :index
     else
@@ -16,7 +18,7 @@ class Api::AnswerVotesController < ApplicationController
 
   def destroy
     # not tracking individual answers on frontend just tracking who is making the request for change condition
-    answer = Answer.find_by(user_id: params[:answer][:user_id])
+    answer = AnswerVote.find_by_params(params)
     if answer
       @answer.destroy
       render :index
@@ -24,7 +26,7 @@ class Api::AnswerVotesController < ApplicationController
   end
 
   def update
-    answer = Answer.find_by(user_id: params[:answer][:user_id])
+    answer = AnswerVote.find_by_params(params)
     if answer && answer.update_attributes(answer_params)
       render :index
     end
@@ -34,7 +36,7 @@ class Api::AnswerVotesController < ApplicationController
   private
 
   def answer_params
-    params.require(:answer_vote).permit(:user_id, :vote)
+    params.require(:answer_vote).permit(:user_id, :vote, :answer_id)
   end
 
 end
