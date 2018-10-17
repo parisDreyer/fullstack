@@ -47,14 +47,18 @@ class QuestionShow extends React.Component{
             <br />
             <div className="question-body-footer">
               <Link to={`/questions/${this.props.questionId}/edit`}>edit</Link>
+              <div className="one-em-padding"></div>
               <div>
                 <div className="error-group">{this.state.buttonErrors.map(e => `${e} `)}</div>
                 <button onClick={this.deleteQuestion} className="footer-button">
                   delete
                 </button>
               </div>
+              <div className="one-em-padding"></div>
               posted {timeSinceUpdate(this.props.question.created_at)} hr:min:secs ago
-              on {this.props.question.created_at} --
+              <div className="one-em-padding"></div>
+              on {this.props.question.created_at}
+              <div className="one-em-padding"></div>
               by { this.props.question.user ? this.props.question.user.username : '__'}
             </div>
           </div>

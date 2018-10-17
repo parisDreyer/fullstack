@@ -4,9 +4,7 @@ import {connect} from 'react-redux';
 
 import {
   fetchAnswerVotes,
-  createAnswerVote,
-  updateAnswerVote,
-  deleteAnswerVote
+  createAnswerVote
 } from '../../actions/answer_vote_actions';
 
 const mapStateToProps = ({session, entities}, { answerId }) => ({
@@ -17,9 +15,7 @@ const mapStateToProps = ({session, entities}, { answerId }) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchAnswerVotes: answerId => dispatch(fetchAnswerVotes(answerId)),
-  castVote: answerVote => dispatch(createAnswerVote(answerVote)),
-  updateVote: answerVote => dispatch(updateAnswerVote(answerVote)),
-  removeVote: answerVote => dispatch(deleteAnswerVote(answerVote))
+  castVote: answerVote => dispatch(createAnswerVote(answerVote))
 });
 
 
@@ -52,7 +48,7 @@ class AnswerVotes extends React.Component {
   downvote(e){
     if(this.props.user){
       this.props.castVote({
-        vote: 1,
+        vote: -1,
         userId: this.props.user.id,
         answerId: this.props.answerId
       });
@@ -65,9 +61,9 @@ class AnswerVotes extends React.Component {
     return (
         <div className="votes">
           <div className="error-group">{errs}</div>
-          <button onClick={this.upvote}>^</button>
-          {this.props.answerVotes}
-          <button onClick={this.downvote}>V</button>
+          <button onClick={this.upvote} className="vote-item">^</button>
+          <div className="vote-item">{this.props.answerVotes}</div>
+          <button onClick={this.downvote} className="vote-item">V</button>
         </div>
     )
   }

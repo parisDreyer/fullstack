@@ -20,15 +20,15 @@ export const createAnswerVote = answerVote => dispatch => (
   ))
 );
 
-export const updateAnswerVote = (answerVote) => dispatch => (
-  APIUtil.updateAnswerVote(answerVote)
-  .then(answerVotes =>
-    dispatch(receiveAnswerVotes(answerVotes))
-  )
-);
+// export const updateAnswerVote = (answerVote) => dispatch => (
+//   APIUtil.updateAnswerVote(answerVote)
+//   .then(answerVotes =>
+//     dispatch(receiveAnswerVotes(answerVotes))
+//   )
+// );
 
-export const deleteAnswerVote = answerVote => dispatch => (
-  APIUtil.deleteAnswerVote(answerVote).then((answerVotes) =>
-    dispatch(receiveAnswerVotes(answerVotes))
-  )
-);
+// export const deleteAnswerVote = answerVote => dispatch => (
+//   APIUtil.deleteAnswerVote(answerVote).then((answerVotes) =>
+//     dispatch(receiveAnswerVotes(answerVotes))
+//   )
+// );

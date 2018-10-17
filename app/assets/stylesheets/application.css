@@ -18,6 +18,11 @@
   display: none;
 }
 
+.one-em-padding{
+  height: 1em;
+  width: 1em;
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }

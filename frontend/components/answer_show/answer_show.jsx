@@ -66,12 +66,16 @@ class AnswerShow extends React.Component{
               <button onClick={(e) => this.editAnswer(e)} className="footer-button">
                 improve this answer
               </button>
+              <div className="one-em-padding"></div>
               <div className="error-group">{this.state.deleteButtonErrors.map(e => `${e} `)}</div>
               <button onClick={(e)=>this.removeAnswer(e)} className="footer-button">
                 delete
               </button>
+              <div className="one-em-padding"></div>
               posted {timeSinceUpdate(this.props.answer.created_at)} hr:min:secs ago
-              on {this.props.answer.created_at} --
+              <div className="one-em-padding"></div>
+              on {this.props.answer.created_at}
+              <div className="one-em-padding"></div>
               by { this.props.answer.user ? this.props.answer.user.username : '__'}
           </div>
         </div>
