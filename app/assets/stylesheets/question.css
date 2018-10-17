@@ -60,6 +60,8 @@ div.new-question-container {
   font-size: .7em;
   padding: 0.6em;
   align-self: flex-end;
+  display: flex;
+  flex-direction: row;
 }
 
 

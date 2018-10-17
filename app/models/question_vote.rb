@@ -22,4 +22,22 @@ class QuestionVote < ApplicationRecord
   primary_key: :id,
   foreign_key: :question_id,
   class_name: :Question
+
+
+  def self.find_by_params(params)
+    return nil unless params[:question_vote]
+    user_id = params[:question_vote][:user_id].to_i
+    question_id = params[:question_vote][:question_id].to_i
+    self.where("question_votes.user_id = ? AND question_votes.question_id = ?", user_id, question_id)
+  end
+
+  def self.vote_in_range(vote)
+    vote = vote.to_i
+    if vote < -1
+      vote = -1
+    elsif vote > 1
+      vote = 1
+    end
+    vote
+  end
 end

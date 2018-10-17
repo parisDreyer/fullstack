@@ -20,19 +20,3 @@ export const createAnswerVote = answerVote => (
 
   })
 );
-
-// export const updateAnswerVote = answerVote => (
-//   $.ajax({
-//     url: `api/answer_votes/${answerVote.userId}`, // vote for a user --because not storing the answervoteid on frontend
-//     method: 'PATCH',
-//     data: {answerVote}
-//   })
-// );
-
-// export const deleteAnswerVote = answerVote => (
-//   $.ajax({
-//     url: `api/answer_votes/${answerVote.userId}`,
-//     method: 'DELETE',
-//     data: {answerVote}
-//   })
-// );
