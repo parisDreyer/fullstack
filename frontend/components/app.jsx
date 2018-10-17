@@ -19,7 +19,7 @@ import SearchShowContainer from './search/search_show_container';
 import QuestionShowContainer from './question_show/question_show_container';
 import QuestionFormContainer from './question_form/question_form_container';
 import QuestionEditContainer from './question_show/question_edit_container';
-import {AuthRoute, ProtectedRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
 

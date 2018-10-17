@@ -1,14 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+// <Link to="/" className="grey-beige">
+//   <strong>HOME</strong>
+// </Link>
+
 const AsideNav = navLinks => (
   <div className="left-sidebar">
     <div className="left-sidebar-sticky-container">
       <div className="space-li-header">Public</div>
       <ul>
         <li className="space-li">
-          <Link to="/" className="grey-beige">
+          <a href="/" className="grey-beige">
             <strong>HOME</strong>
-          </Link>
+          </a>
         </li>
         <li className="space-li">
           <Link to="/questions" className="grey-beige">

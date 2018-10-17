@@ -56,7 +56,6 @@ class SearchShow extends React.Component {
                   <input type="submit" className="main-search-button" value="search"/>
                 </form>
               </div>
-
             </div>
             <QuestionIndex questions={this.props.questions} />
           </div>

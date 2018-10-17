@@ -14,6 +14,9 @@ class Search extends React.Component {
     this.props.updateFilter({limit: this.props.limit});
   }
 
+
+
+
   render(){
     return (
       <div>

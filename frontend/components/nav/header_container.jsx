@@ -40,7 +40,7 @@ class HeaderContainer extends React.Component {
     return (<header className="nav-bar">
     <ul className="header-nav">
       <li className="header-link">
-        <Link to="/">
+        <a href="/">
           <div className="logo-container">
             <div className="logo">
               <img src={window.images.logo}
@@ -48,7 +48,7 @@ class HeaderContainer extends React.Component {
                 as described in Dante Alighieri's epic poem Inferno" />
             </div>stack <strong>inferno</strong>
           </div>
-        </Link>
+        </a>
         {renderNavBarSearch}
       </li>
       <GreetingContainer />
