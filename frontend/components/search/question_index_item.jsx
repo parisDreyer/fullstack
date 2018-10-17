@@ -1,6 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import {timeSinceUpdate} from '../../util/calculation_utils';
+import QuestionVotesNumberContainer from '../question_votes/question_votes_number_container';
 
 class IndexItem extends React.Component {
   constructor(props) {
@@ -15,8 +16,8 @@ class IndexItem extends React.Component {
   render() {
     const { title, body, user, updated_at } = this.props.question;
     return (
-      <div className="question-index-item"
-        onClick={this.handleClick}>
+      <div className="question-index-item" onClick={this.handleClick}>
+        <QuestionVotesNumberContainer questionId={this.props.question.id}/>
         <div className="index-item-title">
           {title || "No title!"}
         </div>
