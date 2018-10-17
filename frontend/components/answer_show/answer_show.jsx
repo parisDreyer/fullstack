@@ -52,7 +52,8 @@ class AnswerShow extends React.Component{
       /> : <div></div>
 
     return(
-      <div>
+      <div className="float-display">
+        <AnswerVotesContainer answerId={this.props.answer.id}/>
         <div className="question-body">
 
           {editForm}
@@ -61,7 +62,6 @@ class AnswerShow extends React.Component{
           <br />
           <br />
           <div className="question-body-footer">
-              <AnswerVotesContainer answerId={this.props.answer.id}/>
               <div className="right-error-group">{this.state.editButtonErrors.map(e => `${e} `)}</div>
               <button onClick={(e) => this.editAnswer(e)} className="footer-button">
                 improve this answer

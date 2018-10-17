@@ -1,0 +1,11 @@
+.votes{
+  padding: 4em;
+  position: relative;
+
+  border-bottom: 1px solid #eff0f1;
+}
+
+.float-display{
+  float:left;
+  display: inline-flex;
+}
