@@ -46,7 +46,7 @@ input {
 
   outline: none;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 0.75em;
   font-weight: 400;
   line-height: 1.15384615;
   text-decoration: none;
@@ -95,7 +95,6 @@ div.new-question-container {
     width: auto;
     max-width: 300px;
     left: 25px;
-    /* left: 37%; */
     font-weight: 800;
   }
 

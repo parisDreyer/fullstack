@@ -113,7 +113,6 @@ display: none;
   .nav-bar{
     position: fixed;
     width: 100%;
-    max-width: 600px;
     height: 60px;
   }
   .nav-search-bar-container, .nav-search-bar{
