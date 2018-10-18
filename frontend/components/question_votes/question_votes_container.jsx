@@ -25,11 +25,24 @@ class QuestionVotes extends React.Component {
   constructor(props){
     super(props);
     if (!this.props.questionVotes) this.props.fetchQuestionVotes(this.props.questionId);
+    let stateVote = this.props.answerVotes ? this.props.answerVotes : 0;
     this.state = {
-      sessionErrors: []
+      sessionErrors: [],
+      questionVotes: stateVote
     }
     this.upvote = this.upvote.bind(this);
     this.downvote = this.downvote.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps){
+    if (nextProps.questionVotes != this.state.questionVotes){
+      this.setState({questionVotes: nextProps.questionVotes});
+    }
+  }
+
+  addToQuestionVotes(num){
+    let newVoteCount = this.state.questionVotes + num;
+    this.setState({questionVotes: newVoteCount})
   }
 
 
@@ -39,7 +52,7 @@ class QuestionVotes extends React.Component {
         vote: 1,
         userId: this.props.user.id,
         questionId: this.props.questionId
-      });
+      }); this.addToQuestionVotes(1);
     }else {
       this.setState({ sessionErrors: ["must be signed in to upvote"]})
     }
@@ -51,7 +64,7 @@ class QuestionVotes extends React.Component {
         vote: -1,
         userId: this.props.user.id,
         questionId: this.props.questionId
-      });
+      }); this.addToQuestionVotes(-1);
     }else {
       this.setState({ sessionErrors: ["must be signed in to downvote"]})
     }
@@ -62,7 +75,7 @@ class QuestionVotes extends React.Component {
         <div className="question-votes">
           <div className="error-group">{errs}</div>
           <button onClick={this.upvote} className="vote-item">^</button>
-          <div className="vote-item">{this.props.questionVotes}</div>
+          <div className="vote-item">{this.state.questionVotes}</div>
           <button onClick={this.downvote} className="vote-item">V</button>
         </div>
     )

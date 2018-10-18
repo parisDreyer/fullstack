@@ -29,6 +29,7 @@ class QuestionVotesNumberContainer extends React.Component {
     return (
         <div className="question-votes">
           <div className="vote-item">{this.props.questionVotes}</div>
+          <div className="little-vote-item">votes</div>
         </div>
     )
   }

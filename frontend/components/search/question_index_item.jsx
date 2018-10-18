@@ -16,15 +16,17 @@ class IndexItem extends React.Component {
   render() {
     const { title, body, user, updated_at } = this.props.question;
     return (
-      <div className="question-index-item" onClick={this.handleClick}>
+      <div className="question-index-votes">
         <QuestionVotesNumberContainer questionId={this.props.question.id}/>
-        <div className="index-item-title">
-          {title || "No title!"}
-        </div>
-        <div className="index-item-footer">
-          modified {timeSinceUpdate(updated_at)} hr:min:secs ago
-          <div className="one-em-padding"></div>
-          question by {user.username || "anon"}
+        <div className="question-index-item" onClick={this.handleClick}>
+          <div className="index-item-title">
+            {title || "No title!"}
+          </div>
+          <div className="index-item-footer">
+            modified {timeSinceUpdate(updated_at)} hr:min:secs ago
+            <div className="one-em-padding"></div>
+            question by {user.username || "anon"}
+          </div>
         </div>
       </div>
     );
