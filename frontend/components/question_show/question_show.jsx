@@ -33,16 +33,18 @@ class QuestionShow extends React.Component{
   }
 
   questionFooter(){
+    const deleteButton =
+    this.props.user && this.props.user.id === this.props.question.user_id ?
+    (<button onClick={this.deleteQuestion} className="footer-button">
+        delete
+      </button>) : null;
+
     return(
       <div className="question-body-footer">
         <Link to={`/questions/${this.props.questionId}/edit`}>edit</Link>
         <div className="one-em-padding"></div>
-        <div>
-          <div className="error-group">{this.state.buttonErrors.map(e => `${e} `)}</div>
-          <button onClick={this.deleteQuestion} className="footer-button">
-            delete
-          </button>
-        </div>
+        <div className="error-group">{this.state.buttonErrors.map(e => `${e} `)}</div>
+        {deleteButton}
         <div className="one-em-padding"></div>
         posted {timeSinceUpdate(this.props.question.created_at)} hr:min:secs ago
         <div className="one-em-padding"></div>

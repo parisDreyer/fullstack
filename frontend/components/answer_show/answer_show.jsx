@@ -51,6 +51,12 @@ class AnswerShow extends React.Component{
       resetRenderEditState={this.resetRenderEditState}
       /> : <div></div>
 
+    const deleteButton =
+      this.props.user && this.props.user.id === this.props.answer.user_id ?
+      (<button onClick={(e)=>this.removeAnswer(e)} className="footer-button">
+        delete
+      </button>) : null;
+
     return(
       <div className="float-display">
         <AnswerVotesContainer answerId={this.props.answer.id}/>
@@ -68,9 +74,7 @@ class AnswerShow extends React.Component{
               </button>
               <div className="one-em-padding"></div>
               <div className="error-group">{this.state.deleteButtonErrors.map(e => `${e} `)}</div>
-              <button onClick={(e)=>this.removeAnswer(e)} className="footer-button">
-                delete
-              </button>
+              {deleteButton}
               <div className="one-em-padding"></div>
               posted {timeSinceUpdate(this.props.answer.created_at)} hr:min:secs ago
               <div className="one-em-padding"></div>
