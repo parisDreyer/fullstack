@@ -19,15 +19,17 @@ class QuestionIndexFooter extends React.Component {
   }
 
   componentDidMount(){
-    this.props.updateFilter('text', this.state.text);
+    this.props.updateFilter('limit', this.state.limit);
+    this.props.updateFilter('offset', this.state.offset);
   }
 
-  handleSearchClick(e){
-    e.preventDefault();
-    this.setState({
-      text: e.target.children[0].value
-    });
-    this.props.updateFilter('text', e.target.children[0].value);
+
+
+  handleSearchClick(offs){
+    // this.setState({ limit: lim });
+    this.setState({ offset: offs })
+    // this.props.updateFilter('limit', lim);
+    this.props.updateFilter('offset', offs)
   }
 
   button_range(length){
@@ -42,14 +44,34 @@ class QuestionIndexFooter extends React.Component {
     if(length <= biteSize) return (<div></div>);
 
     const first = pos < biteSize ?
-      <li className="current"><button>1 - {biteSize}</button></li>
-      : <li><button>1 - {biteSize}</button></li>
+        <li className="current">
+          <button onClick={() => this.handleSearchClick(pos)}>
+            1 - {biteSize}
+          </button>
+        </li>
+      : <li>
+        <button onClick={() => this.handleSearchClick(biteSize)}>
+          1 - {biteSize}
+        </button>
+      </li>
     const aftrFirst = pos > biteSize ?
-      <li className="current"><button>{pos - biteSize} - {pos}</button></li> : null;
+      <li className="current">
+        <button onClick={() => this.handleSearchClick(pos)}>
+          {pos - biteSize} - {pos}
+        </button>
+      </li> : null;
     const second = (pos + biteSize + 1 < length) ?
-      <li><button>{pos + biteSize + 1} - {pos + (2*biteSize)}</button></li> : null;
+      <li>
+        <button onClick={() => this.handleSearchClick(pos + (2*biteSize))}>
+          {pos + biteSize + 1} - {pos + (2*biteSize)}
+        </button>
+      </li> : null;
     const last = (length - biteSize > pos) ?
-      <li><button>{length - biteSize} - {length}</button></li> : null;
+      <li>
+        <button onClick={() => this.handleSearchClick(length - biteSize)}>
+          {length - biteSize} - {length}
+        </button>
+      </li> : null;
     const buffer = last ? <li>...</li> : null;
     return (
       <ul className="question-index-footer">
