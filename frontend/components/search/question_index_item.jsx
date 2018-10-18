@@ -18,7 +18,7 @@ class IndexItem extends React.Component {
     return (
       <div className="question-index-votes">
         <QuestionVotesNumberContainer
-          questionId={this.props.question.id} 
+          questionId={this.props.question.id}
           numAnswers={this.props.question.answer_count}/>
         <div className="question-index-item" onClick={this.handleClick}>
           <div className="index-item-title">
@@ -27,7 +27,7 @@ class IndexItem extends React.Component {
           <div className="index-item-footer">
             modified {timeSinceUpdate(updated_at)} hr:min:secs ago
             <div className="one-em-padding"></div>
-            question by {user.username || "anon"}
+            question by { user ? user.username : "anon"}
           </div>
         </div>
       </div>

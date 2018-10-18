@@ -10,9 +10,9 @@ const questionReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_QUESTIONS:
-      return action.questions;
+      return action.questions;//{ ['questions']: action.questions.questions, ['total']: action.questions.total };
     case RECEIVE_QUESTION:
-      const newQuestion = { [action.question.id]: action.question}
+      const newQuestion = { [action.question.id]: action.question }
       return merge({}, state, newQuestion);
     case REMOVE_QUESTION:
       let newState = merge({}, state);

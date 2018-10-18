@@ -13,7 +13,7 @@ class Api::QuestionsController < ApplicationController
 
   def index
     @questions = bounds ? Question.in_bounds(bounds) : Question.all
-
+    @total_questions_in_bounds = Question.total_in_bounds(bounds)
     render :index
   end
 

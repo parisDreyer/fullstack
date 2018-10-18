@@ -44,6 +44,19 @@ class Question < ApplicationRecord
     end
   end
 
+  def self.total_in_bounds(bounds)
+    user_id = bounds[:user_id]
+    text = bounds[:text] || ''
+
+    if text
+      Question.where("title LIKE ?", "%#{text}%").count(:id)
+    elsif user_id
+      Question.where("user_id == ?", user_id).count(:id)
+    else
+      Question.all.order.limit(lim).count(:id)
+    end
+  end
+
 
   def answer_count
     Answer.where('question_id = ?', self.id).count(:id)

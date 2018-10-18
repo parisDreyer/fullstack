@@ -18,6 +18,9 @@ class Search extends React.Component {
 
 
   render(){
+    const the_qs = this.props.questions;
+    const the_total = this.props.total ? this.props.questions.total : 0;
+    const index = the_qs ? <QuestionIndex questions={the_qs} total={the_total} /> : <div></div>;
     return (
       <div>
         <RenderSplash user={this.props.user} />
@@ -36,7 +39,8 @@ class Search extends React.Component {
                   />
               </div>
             </div>
-            <QuestionIndex questions={this.props.questions} />
+
+            {index}
           </div>
         </div>
       </div>

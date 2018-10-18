@@ -5,7 +5,9 @@ import { questionsArray} from '../../reducers/selectors';
 import SearchShow from './search_show';
 
 const mapStateToProps = state => ({
-  questions: questionsArray(state.entities),
+  // questions: questionsArray(state.entities),
+  questions: questionsArray(state.entities.questions.questions || []),
+  total: state.entities.questions.total,
   limit: state.ui.filters.limit,
   offset: state.ui.filters.offset,
   text: '',

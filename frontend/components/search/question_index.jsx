@@ -1,7 +1,7 @@
 import React from 'react';
 import IndexItem from './question_index_item';
 
-const QuestionIndex = ({ questions }) => (
+const QuestionIndex = ({ questions  }) => (
   <div>
     {questions.map(question => (
       <IndexItem
