@@ -28,7 +28,8 @@ class AnswerShow extends React.Component{
     {
       this.props.deleteAnswer(this.props.answerId);
     } else {
-      this.setState({ ['deleteButtonErrors']: ['cannot delete other users\' answers' ]})
+      this.setState({ ['deleteButtonErrors']: ['cannot delete other users\' answers' ]});
+      window.setTimeout(() => this.setState({['deleteButtonErrors']: []}), 4000);
     }
   }
 
@@ -37,7 +38,8 @@ class AnswerShow extends React.Component{
     if(this.props.user){
       this.setState({['renderEdit']: true});
     } else {
-      this.setState({ ['editButtonErrors']: ['must be logged in to edit answers' ]})
+      this.setState({ ['editButtonErrors']: ['must be logged in to edit answers' ]});
+            window.setTimeout(() => this.setState({['editButtonErrors']: []}), 4000);
     }
   }
   resetRenderEditState(){

@@ -25,9 +25,9 @@ class IndexItem extends React.Component {
             {title || "No title!"}
           </div>
           <div className="index-item-footer">
-            modified {timeSinceUpdate(updated_at)} hr:min:secs ago
+            <div className="index-footer-text">modified {timeSinceUpdate(updated_at)} hr:min:secs ago</div>
             <div className="one-em-padding"></div>
-            question by { user ? user.username : "anon"}
+            <div className="index-footer-text">question by { user ? user.username : "anon"}</div>
           </div>
         </div>
       </div>

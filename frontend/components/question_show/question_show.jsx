@@ -29,6 +29,7 @@ class QuestionShow extends React.Component{
       this.props.history.push('/');
     } else {
       this.setState({ ['buttonErrors']: ['cannot delete other users\' questions' ]})
+      window.setTimeout(() => this.setState({['buttonErrors']: []}), 4000);
     }
   }
 

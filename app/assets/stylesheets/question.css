@@ -20,6 +20,12 @@ div.new-question-container {
 
 }
 
+.index-footer-text{
+  height:auto;
+  line-height: 1em;
+  word-wrap: break-word;
+}
+
 .question-body-footer{
   display: flex;
   justify-content: space-between;
@@ -62,6 +68,7 @@ div.new-question-container {
   padding: 0.6em;
   align-self: flex-end;
   display: flex;
+  height: auto;
   flex-direction: row;
 }
 
