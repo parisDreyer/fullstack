@@ -86,6 +86,21 @@
   margin-left: -0.5em;
 }
 
+div.space-li-header{
+  padding-bottom: 0.2em;
+}
+
+.little-header{
+  margin-left: -0.5em;
+  font-size: 0.8em;
+}
+
+.home-link, a.home-link {
+  color: black;
+  font-size:0.95em;
+}
+
+
 .left-sidebar-sticky-container{
   position: sticky;
   top: 4em;

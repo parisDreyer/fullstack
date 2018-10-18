@@ -8,13 +8,11 @@ import { Link } from 'react-router-dom';
 const AsideNav = navLinks => (
   <div className="left-sidebar">
     <div className="left-sidebar-sticky-container">
-      <div className="space-li-header">Public</div>
+      <div className="space-li-header">
+        <a className="home-link" href="/">Home</a>
+      </div>
+      <div className="little-header grey-beige">Public</div>
       <ul>
-        <li className="space-li">
-          <a href="/" className="grey-beige">
-            <strong>HOME</strong>
-          </a>
-        </li>
         <li className="space-li">
           <Link to="/questions" className="grey-beige">
             <div className="logo-container">
