@@ -22,7 +22,7 @@ class Search extends React.Component {
     const the_total = this.props.total ? this.props.questions.total : 0;
     const index = the_qs ? <QuestionIndex questions={the_qs} total={the_total} /> : <div></div>;
     return (
-      <div>
+      <div className="full-package">
         <RenderSplash user={this.props.user} />
         <div className="content">
           <AsideNav links={1}/>
@@ -40,7 +40,7 @@ class Search extends React.Component {
               </div>
             </div>
             {index}
-            
+
           </div>
         </div>
       </div>

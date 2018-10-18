@@ -25,7 +25,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
 const App = () => (
-  <div>
+  <div className="full-package">
     <HeaderContainer inSearchQs={window.location.toString().includes('/questions/')}/>
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />

@@ -23,7 +23,8 @@
 .splash-signup-container{
   display: inline-block;
   padding-top: 10%;
-  margin-right: 25%;
+  margin-right: 10%;
+  width: 100%;
 }
 
 .splash-login-form{
@@ -71,6 +72,7 @@ input.splash-login-input:hover{
   padding-top: 5%;
   padding-bottom: 10%;
   text-shadow: 0 0 4px black;
+  width: 100%;
   /* #FF0000; */
 }
 .splash-explanation-text h3 { font-size: 42px;}
