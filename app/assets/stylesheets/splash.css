@@ -21,9 +21,8 @@
 
 
 .splash-signup-container{
-  display: inline-block;
+  /* display: inline-block; */
   padding-top: 10%;
-  margin-right: 10%;
   width: 100%;
 }
 

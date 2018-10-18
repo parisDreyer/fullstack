@@ -12,15 +12,15 @@
 }
 
 .question-votes{
-  padding-right: 1.4em;
+  padding-right: 1.1em;
   padding-left: 0.4em;
   padding-top: 0.1em;
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   color: #6a737c;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 .question-index-votes{
@@ -37,6 +37,7 @@
 }
 
 
+
 .float-display{
   float:left;
   display: inline-flex;
@@ -47,8 +48,11 @@
   align-self: center;
 }
 
+.medium-vote-item{
+  font-size: 0.8em;
+}
 .little-vote-item{
-  font-size: 0.5em;
+  font-size: 0.4em;
 }
 
 button.vote-item{
