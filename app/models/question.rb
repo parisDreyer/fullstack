@@ -36,16 +36,17 @@ class Question < ApplicationRecord
     offs = bounds[:offset] || 0
 
     if text
-      self.where("title LIKE ?", "%#{text}%").limit(lim).offset(offs).order(updated_at: :desc)
+      Question.where("title LIKE ?", "%#{text}%").limit(lim).offset(offs).order(updated_at: :desc)
     elsif user_id
-      self.where("user_id == ?", user_id).limit(lim).offset(offs).order(:updated_at)
+      Question.where("user_id == ?", user_id).limit(lim).offset(offs).order(:updated_at)
     else
-      self.all.order.limit(lim).offset(offs).(created_at: :desc)
+      Question.all.order.limit(lim).offset(offs).(created_at: :desc)
     end
   end
 
 
-
-
+  def answer_count
+    Answer.where('question_id = ?', self.id).count(:id)
+  end
 
 end

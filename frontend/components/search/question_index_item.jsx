@@ -17,7 +17,9 @@ class IndexItem extends React.Component {
     const { title, body, user, updated_at } = this.props.question;
     return (
       <div className="question-index-votes">
-        <QuestionVotesNumberContainer questionId={this.props.question.id}/>
+        <QuestionVotesNumberContainer
+          questionId={this.props.question.id} 
+          numAnswers={this.props.question.answer_count}/>
         <div className="question-index-item" onClick={this.handleClick}>
           <div className="index-item-title">
             {title || "No title!"}

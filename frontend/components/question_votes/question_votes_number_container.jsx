@@ -6,10 +6,11 @@ import {
   fetchQuestionVotes
 } from '../../actions/question_vote_actions';
 
-const mapStateToProps = ({session, entities}, { questionId }) => ({
+const mapStateToProps = ({session, entities}, { questionId, numAnswers }) => ({
   user: session.id ? entities.users[session.id] : null,
   questionId,
-  questionVotes: entities.questionVotes[questionId]
+  questionVotes: entities.questionVotes[questionId],
+  numAnswers
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -30,6 +31,8 @@ class QuestionVotesNumberContainer extends React.Component {
         <div className="question-votes">
           <div className="vote-item">{this.props.questionVotes}</div>
           <div className="little-vote-item">votes</div>
+          <div className="vote-item">{this.props.numAnswers}</div>
+          <div className="little-vote-item">answers</div>
         </div>
     )
   }

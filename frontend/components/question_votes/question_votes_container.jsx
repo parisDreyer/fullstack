@@ -25,7 +25,7 @@ class QuestionVotes extends React.Component {
   constructor(props){
     super(props);
     if (!this.props.questionVotes) this.props.fetchQuestionVotes(this.props.questionId);
-    let stateVote = this.props.answerVotes ? this.props.answerVotes : 0;
+    let stateVote = this.props.questionVotes ? this.props.questionVotes : 0;
     this.state = {
       sessionErrors: [],
       questionVotes: stateVote
@@ -34,6 +34,9 @@ class QuestionVotes extends React.Component {
     this.downvote = this.downvote.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchQuestionVotes(this.props.questionId);
+  }
   componentWillReceiveProps(nextProps){
     if (nextProps.questionVotes != this.state.questionVotes){
       this.setState({questionVotes: nextProps.questionVotes});
