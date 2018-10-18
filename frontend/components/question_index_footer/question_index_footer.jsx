@@ -32,53 +32,49 @@ class QuestionIndexFooter extends React.Component {
     this.props.updateFilter('offset', offs)
   }
 
+  button_element(pos, increment){
+    return (
+      <button onClick={() => this.handleSearchClick(pos)}>
+        {pos} - {pos + increment}
+      </button>
+    );
+  }
+
   button_range(length){
     let biteSize = this.state.limit;
     let pos = this.state.offset;
-    // const container = new Array(Math.floor(length / biteSize));
-
-
-    // return Array.from(container).map((el, index) =>
-    //   <button>{biteSize * index} - {(index + 1) * biteSize}</button>
-    // );
+    let doubl = 2*biteSize;
     if(length <= biteSize) return (<div></div>);
 
     const first = pos < biteSize ?
-        <li className="current">
-          <button onClick={() => this.handleSearchClick(pos)}>
-            1 - {biteSize}
-          </button>
-        </li>
-      : <li>
-        <button onClick={() => this.handleSearchClick(biteSize)}>
-          1 - {biteSize}
-        </button>
-      </li>
-    const aftrFirst = pos > biteSize ?
-      <li className="current">
-        <button onClick={() => this.handleSearchClick(pos)}>
-          {pos - biteSize} - {pos}
-        </button>
-      </li> : null;
-    const second = (pos + biteSize + 1 < length) ?
-      <li>
-        <button onClick={() => this.handleSearchClick(pos + (2*biteSize))}>
-          {pos + biteSize + 1} - {pos + (2*biteSize)}
-        </button>
-      </li> : null;
-    const last = (length - biteSize > pos) ?
-      <li>
-        <button onClick={() => this.handleSearchClick(length - biteSize)}>
-          {length - biteSize} - {length}
-        </button>
-      </li> : null;
-    const buffer = last ? <li>...</li> : null;
+    <li className="current">{this.button_element(0, biteSize)}</li>
+      : <li>{this.button_element(0, biteSize)}</li>
+    const afterFirst = doubl < length ?
+      (
+        pos >= biteSize && pos < doubl ?
+        <li className="current">{this.button_element(biteSize + 1, biteSize)}</li>
+          : <li>{this.button_element(biteSize + 1, biteSize)}</li>
+      ) : null;
+
+
+    const beforeCurrent =
+        pos - biteSize > doubl ? <li>{this.button_element(pos - biteSize, biteSize)}</li> : null
+    const current = pos > doubl ?
+      <li className="current">{this.button_element(pos, biteSize)}</li> : null
+    const afterCurrent = length > pos + doubl && pos > biteSize ?
+      <li>{this.button_element(pos + biteSize + 1, biteSize)}</li> : null
+
+    const last = length > pos + biteSize && length > biteSize ?
+      <li>{this.button_element(length - biteSize, biteSize)}</li> : null
+
+
     return (
       <ul className="question-index-footer">
         {first}
-        {aftrFirst}
-        {second}
-        {buffer}
+        {afterFirst}
+        {beforeCurrent}
+        {current}
+        {afterCurrent}
         {last}
       </ul>
     );
