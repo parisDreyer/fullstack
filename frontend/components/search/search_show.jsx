@@ -5,7 +5,7 @@ import FilterForm from './filter_form';
 import QuestionIndex from './question_index';
 import { Link } from 'react-router-dom';
 import AsideNav from '../nav/aside_nav';
-
+import QuestionIndexFooterContainer from '../question_index_footer/question_index_footer_container';
 
 
 
@@ -37,8 +37,9 @@ class SearchShow extends React.Component {
 
   render(){
     const the_qs = this.props.questions;
-    const the_total = this.props.total ? this.props.questions.total : 0;
+    const the_total = this.props.total ? this.props.total : 0;
     const index = the_qs ? <QuestionIndex questions={the_qs} total={the_total} /> : <div></div>;
+    const foot = the_qs ? <QuestionIndexFooterContainer total={the_total}  /> : <div></div>;
     return (
       <div>
         <div className="content">
@@ -46,7 +47,7 @@ class SearchShow extends React.Component {
           <div className="main-content">
             <div className="header-section">
               <div className="question-index-header">
-                <h1>Search Results</h1>
+                <h1>{this.props.total ? this.props.total : 0} Search Results</h1>
                 <Link to="/questions/new" className="link-button">Ask Question</Link>
               </div>
               <div className="limit-specs">
@@ -61,6 +62,7 @@ class SearchShow extends React.Component {
               </div>
             </div>
             {index}
+            {foot}
           </div>
         </div>
       </div>

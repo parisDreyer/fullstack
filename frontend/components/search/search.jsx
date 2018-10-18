@@ -39,8 +39,8 @@ class Search extends React.Component {
                   />
               </div>
             </div>
-
             {index}
+            
           </div>
         </div>
       </div>

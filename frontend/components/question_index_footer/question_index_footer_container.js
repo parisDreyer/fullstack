@@ -2,16 +2,14 @@ import { connect } from 'react-redux';
 
 import {updateFilter} from '../../actions/filter_actions';
 import { questionsArray} from '../../reducers/selectors';
-import Search from './search';
+  import QuestionIndexFooter from './question_index_footer';
 
-const mapStateToProps = state => ({
-  // questions: questionsArray(state.entities),
+const mapStateToProps = (state, {total}) => ({
+  total,
   limit: state.ui.filters.limit,
   offset: state.ui.filters.offset,
-  text: '',
   user: state.entities.users[state.session.id],
-  questions: questionsArray(state.entities.questions.questions || []),
-  total: state.entities.questions.total
+  searchShowPage: true
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -21,4 +19,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Search);
+)(QuestionIndexFooter);
