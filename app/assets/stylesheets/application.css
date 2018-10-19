@@ -20,9 +20,10 @@
 
 #root {
    box-sizing: border-box;
+   display: block;
    top:0;
    left:0;
-   bottom: 0;
+   bottom: 10em;
    right: 0;
 }
 
@@ -81,6 +82,13 @@
   padding: 10px;
   background-color: #FFF8DC;
   border-left: 2px solid #ffeb8e;
+}
+
+.grey-white{
+  color: #bbc0c4;
+}
+.grey-white:hover{
+  color: #848d95;
 }
 
 body {

@@ -1,0 +1,30 @@
+.site-footer-container{
+  height: 7em;
+  margin-top:20px;
+  min-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 12px 12px 12px;
+  display: flex;
+  position: relative;
+  z-index: 4000;
+  flex-flow: row wrap;
+  background-color: #242729;
+}
+
+
+.site-footer{
+  display: flex;
+  flex-direction: row;
+  background-color: #242729;
+  background-image: none;
+  background-position: top left;
+  background-repeat: no-repeat;
+  justify-content: space-between;
+  padding: 4em;
+  background-size: auto;
+  color: #6a737c;
+  padding-top: 1em;
+  width: 100%;
+  align-items: center;
+}

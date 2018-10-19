@@ -25,6 +25,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
 const App = () => (
+  <div>
   <div className="full-package">
     <HeaderContainer inSearchQs={window.location.toString().includes('/questions/')}/>
     <Switch>
@@ -39,6 +40,33 @@ const App = () => (
       <Route exact path="/questions/" component={SearchShowContainer} />
       <Redirect to="/" />
     </Switch>
+  </div>
+  <div className="site-footer-container">
+    <div className="site-footer">
+      <div className="space-li-header">
+        <a className="home-link" href="/" className="grey-white">Home</a>
+      </div>
+      <ul>
+        <li className="space-li">
+          <Link to="/questions" className="grey-white">
+            <div className="logo-container">
+              <div className="logo">
+                <img src={window.images.logo}
+                  alt="site header logo is a drawing of the rings of hell
+                  as described in Dante Alighieri's epic poem Inferno" />
+              </div>
+              stack <strong>inferno</strong>
+            </div>
+          </Link>
+        </li>
+        <li className="space-li">
+          <Link to="/jobs" className="grey-white">
+            <strong>Jobs</strong>
+          </Link>
+        </li>
+      </ul>
+    </div>
+  </div>
   </div>
 );
 
