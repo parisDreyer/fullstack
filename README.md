@@ -6,7 +6,8 @@
 application up and running.`
 - `Welcome to Stack Inferno. Stack Inferno is a clone of StackOverflow that uses text from 14th Century Italian Epic Poet Dante Alighieri's Divine Comedy as sample data.`
 
-![Alt text](/main_site.png?raw=true "Main Site Page")
+- Main Page
+![Site Index Page](/main_site.png?raw=true "Main Site Page")
 
 ## `Setup`
 
@@ -34,6 +35,8 @@ The project should then be available at the address `localhost:3000` in your bro
 
 * Users can `Search` for `questions` by `title`, `Ask Questions`, `Answer Questions`, and `Vote` on `Questions` and `Answers`.
 
-![Alt text](/QandA.png?raw=true "Question And Answer Page")
+- Ask Questions and Post Answers
+![Ask Questions and Answer Questions](/QandA.png?raw=true "Question And Answer Page")
 
-![Alt text](/editAnswer.png?raw=true "Edit Answer Form")
+- Edit Answers
+![Edit Answer Form](/editAnswer.png?raw=true "Edit Answer Form")
