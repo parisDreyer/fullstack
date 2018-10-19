@@ -77,8 +77,8 @@ class QuestionShow extends React.Component{
       <div className="header-section">
         <div className="question-index-header">
           <h1 className="question-title">{this.props.question.title}</h1>
-          <Link to="/questions/new" className="link-button constrain-button-size">Ask Question</Link>
         </div>
+        <Link to="/questions/new" className="link-button constrain-button-size">Ask Question</Link>
       </div>
     );
   }

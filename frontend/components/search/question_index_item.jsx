@@ -11,7 +11,7 @@ class IndexItem extends React.Component {
 
   handleClick() {
     const questionId = this.props.question.id;
-    this.props.history.push(`/questions/${questionId}`);
+    this.props.history.push(`/questions/${questionId}/`);
   }
   render() {
     const { title, body, user, updated_at } = this.props.question;

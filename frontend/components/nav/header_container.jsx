@@ -25,7 +25,9 @@ class HeaderContainer extends React.Component {
   }
   handleSearchClick(e){
     e.preventDefault();
-    if(!window.location.toString().includes('questions/')) window.location = `${window.location}questions/`;
+    let val = $('input.nav-search-bar').val()
+    if(!window.location.toString().includes('questions/'))
+      window.location = `${window.location}questions/?=${val}`;
   }
 
   render() {

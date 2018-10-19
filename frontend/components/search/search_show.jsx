@@ -16,9 +16,9 @@ class SearchShow extends React.Component {
     this.state = {
       limit: this.props.limit,
       offset: this.props.offset,
-      text: $('input.nav-search-bar').val()
+      text: this.props.text
     };
-
+    this.props.updateFilter('text', this.props.text);
     this.handleSearchClick = this.handleSearchClick.bind(this);
 
   }
