@@ -4,7 +4,7 @@ import QuestionIndex from './question_index';
 import { Link } from 'react-router-dom';
 import RenderSplash from '../splash/render_splash';
 import AsideNav from '../nav/aside_nav';
-
+import RightNav from '../nav/right_nav';
 
 class Search extends React.Component {
 
@@ -42,6 +42,7 @@ class Search extends React.Component {
             {index}
 
           </div>
+          <RightNav links={1}/>
         </div>
       </div>
     );

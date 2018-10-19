@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 
 import { ProtectedRoute} from '../../util/route_util';
 import AsideNav from '../nav/aside_nav';
+import RightNav from '../nav/right_nav';
 import NewAnswerFormContainer from '../answer_form/new_answer_form_container';
 import AnswerIndex from '../answer_index/answer_index';
 import QuestionVotesContainer from '../question_votes/question_votes_container';
@@ -92,6 +93,7 @@ class QuestionShow extends React.Component{
           <AnswerIndex answers={this.props.answers}/>
           <NewAnswerFormContainer questionId={this.props.questionId} />
         </div>
+        <RightNav links={1}/>
       </div>
     );
   }

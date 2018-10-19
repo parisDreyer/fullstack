@@ -5,6 +5,7 @@ import FilterForm from './filter_form';
 import QuestionIndex from './question_index';
 import { Link } from 'react-router-dom';
 import AsideNav from '../nav/aside_nav';
+import RightNav from '../nav/right_nav';
 import QuestionIndexFooterContainer from '../question_index_footer/question_index_footer_container';
 
 
@@ -66,6 +67,7 @@ class SearchShow extends React.Component {
             {index}
             {foot}
           </div>
+          <RightNav links={1}/>
         </div>
       </div>
     );

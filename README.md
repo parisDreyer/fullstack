@@ -18,7 +18,7 @@ The project should then be available at the address `localhost:3000` in your bro
 
 ## `Dependencies`
 
-* `Ruby version 5.1`, `NodeJS`, and `PostgreSQL version 10` installed on your machine
+* `Ruby version 2.5.1`, `NodeJS`, and `PostgreSQL version 10` installed on your machine
 
 * Requires Install of `NodeJS` for node-package-manager (`npm`)
 
