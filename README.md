@@ -3,22 +3,28 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+## `Setup`
 
-* Ruby version
+git clone the repo with the url:  `https://github.com/parisDreyer/fullstack.git`  
+`gem install`  
+`bundle install`  
+`npm install`  
+`bundle exec rails db:setup` -to create database files and seed the database
+`npm run start`
 
-* System dependencies
+The project should then be available at the address `localhost:3000` in your browser
 
-* Configuration
 
-* Database creation
+## `Dependencies`
 
-* Database initialization
+* `Ruby version 5.1`, `NodeJS`, and `PostgreSQL version 10` installed on your machine
 
-* How to run the test suite
+* Requires Install of NodeJS for node-package-manager
+
+* The frontend is compiled with webpack that generates a `dist/bundle.js` file from the entrypoint file `./frontend/stack_inferno.jsx`.  
+  - The routes for this webpack configuration can be fount in the `webpack.config.js` file
+
+
+## Functionality
 
 * Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
