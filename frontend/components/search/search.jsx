@@ -30,9 +30,9 @@ class Search extends React.Component {
             <div className="header-section">
               <div className="question-index-header">
                 <h1>Top Questions</h1>
-                <Link to="/questions/new" className="link-button">Ask Question</Link>
               </div>
               <div className="limit-specs">
+                <Link to="/questions/new" className="link-button">Ask Question</Link>
                 <FilterForm
                   limit={this.props.limit}
                   updateFilter={this.props.updateFilter}
