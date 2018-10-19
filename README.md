@@ -28,4 +28,4 @@ The project should then be available at the address `localhost:3000` in your bro
 
 ## `Functionality`
 
-* Users can Search for questions by title, Ask Questions, Answer Questions, and Vote on Questions and Answers.
+* Users can `Search` for `questions` by `title`, `Ask Questions`, `Answer Questions`, and `Vote` on `Questions` and `Answers`.
