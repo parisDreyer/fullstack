@@ -28,6 +28,12 @@
   flex-direction: column;
 }
 
+.center-flex-row{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
 .one-em-padding{
   height: 1em;
   width: 1em;

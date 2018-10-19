@@ -11,7 +11,7 @@
   font-size: 1.5em;
 }
 
-.question-votes{
+/* .question-votes{
   padding-right: 1.1em;
   padding-left: 0.4em;
   padding-top: 0.1em;
@@ -21,16 +21,29 @@
   align-items: center;
   color: #6a737c;
   font-size: 1.2em;
-}
+} */
 
-.question-index-votes{
-  padding-right: 1.4em;
+.question-votes{
+  padding-right: 1.1em;
   padding-left: 0.4em;
   padding-top: 0.1em;
   position: relative;
   display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #6a737c;
+  font-size: 1.2em;
+}
+
+
+.question-index-votes{
+  padding-right: 1.4em;
+  padding-left: 0.6em;
+  padding-top: 0.1em;
+  position: relative;
+  display: flex;
   flex-direction: row;
-  justify-content: center;
+  align-items: center;
   border-bottom: 1px solid #eff0f1;
   color: #6a737c;
   font-size: 1.5em;

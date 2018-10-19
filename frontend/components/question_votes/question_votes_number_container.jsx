@@ -28,7 +28,7 @@ class QuestionVotesNumberContainer extends React.Component {
 
   render(){
     return (
-      <div className="question-votes">
+      <div className="center-flex-row">
         <div className="center-flex-col">
           <div className="medium-vote-item">{this.props.questionVotes}</div>
           <div className="little-vote-item">votes</div>
