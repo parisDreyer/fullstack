@@ -22,25 +22,9 @@ import QuestionEditContainer from './question_show/question_edit_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
-
-
-const App = () => (
-  <div>
-  <div className="full-package">
-    <HeaderContainer inSearchQs={window.location.toString().includes('/questions/')}/>
-    <Switch>
-      <AuthRoute exact path="/login" component={LogInFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute exact path="/questions/new" component={QuestionFormContainer} />
-      <ProtectedRoute path="/questions/:questionId/edit" component={QuestionEditContainer} />
-      <Route path="/questions/:questionId" component={QuestionShowContainer} />
-      <Route path="/jobs" component={JobsContainer} />
-      <Route exact path="/" component={SearchContainer} />
-      <Route path="/questions/?=" component={SearchShowContainer} />
-      <Route exact path="/questions/" component={SearchShowContainer} />
-      <Redirect to="/" />
-    </Switch>
-  </div>
+function footer(render){
+  if (render) return null;
+  return(
   <div className="site-footer-container">
     <div className="site-footer">
       <div className="space-li-header">
@@ -66,7 +50,28 @@ const App = () => (
         </li>
       </ul>
     </div>
+  </div>);
+}
+
+
+const App = () => (
+  <div>
+  <div className="full-package">
+    <HeaderContainer inSearchQs={window.location.toString().includes('/questions/')}/>
+    <Switch>
+      <AuthRoute exact path="/login" component={LogInFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <ProtectedRoute exact path="/questions/new" component={QuestionFormContainer} />
+      <ProtectedRoute path="/questions/:questionId/edit" component={QuestionEditContainer} />
+      <Route path="/questions/:questionId" component={QuestionShowContainer} />
+      <Route path="/jobs" component={JobsContainer} />
+      <Route exact path="/" component={SearchContainer} />
+      <Route path="/questions/?=" component={SearchShowContainer} />
+      <Route exact path="/questions/" component={SearchShowContainer} />
+      <Redirect to="/" />
+    </Switch>
   </div>
+    {footer(window.location.toString().includes('/questions/'))}
   </div>
 );
 
