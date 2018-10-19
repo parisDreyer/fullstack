@@ -1,8 +1,12 @@
 # `README`
 
+
+- [Stack Inferno Live](https://stack-infierno.herokuapp.com/#/)
 - `This README documents the steps necessary to get the
 application up and running.`
 - `Welcome to Stack Inferno. Stack Inferno is a clone of StackOverflow that uses text from 14th Century Italian Epic Poet Dante Alighieri's Divine Comedy as sample data.`
+
+![Alt text](/main_site.png?raw=true "Main Site Page")
 
 ## `Setup`
 
@@ -29,3 +33,7 @@ The project should then be available at the address `localhost:3000` in your bro
 ## `Functionality`
 
 * Users can `Search` for `questions` by `title`, `Ask Questions`, `Answer Questions`, and `Vote` on `Questions` and `Answers`.
+
+![Alt text](/QandA.png?raw=true "Question And Answer Page")
+
+![Alt text](/editAnswer.png?raw=true "Edit Answer Form")
