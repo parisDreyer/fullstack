@@ -46,19 +46,21 @@ class SearchShow extends React.Component {
           <AsideNav links={1}/>
           <div className="main-content">
             <div className="header-section">
-              <div className="question-index-header">
-                <h1>{this.props.total ? this.props.total : 0} Search Results</h1>
-                <Link to="/questions/new" className="link-button">Ask Question</Link>
-              </div>
-              <div className="limit-specs">
-                <FilterForm
-                  limit={this.props.limit}
-                  updateFilter={this.props.updateFilter}
-                  />
+              <div className="flex-left-col">
+                <div className="question-index-header bigger-font">
+                  <h1>{this.props.total ? this.props.total : 0} Search Results</h1>
+                </div>
                 <form onSubmit={this.handleSearchClick} className="main-search-container">
                   <input className="main-search-bar" type="text" />
                   <input type="submit" className="main-search-button" value="search"/>
                 </form>
+              </div>
+              <div className="limit-specs">
+                <Link to="/questions/new" className="link-button">Ask Question</Link>
+                <FilterForm
+                  limit={this.props.limit}
+                  updateFilter={this.props.updateFilter}
+                  />
               </div>
             </div>
             {index}
