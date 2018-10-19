@@ -78,12 +78,10 @@ class AnswerForm extends React.Component {
     e.preventDefault();
     if (this.state.userId){
       if(this.props.formType === 'Edit'){
-        //formData.append('answer[id]', this.state.id)//this.props.answerAction(this.state);
         this.props.answerAction({
           id: this.state.id,
           question_id: this.state.questionId,
           body: this.state.body,
-          // user_id: this.state.userId
         });
         this.props.resetRenderEditState();
       } else {
@@ -94,7 +92,10 @@ class AnswerForm extends React.Component {
         this.props.answerAction(formData);
       }
       this.navigateToShow();
-    } else { this.setState({['buttonErrors']:["must be logged in to answer questions"]}); }
+    } else {
+      this.setState({['buttonErrors']:["must be logged in to answer questions"]});
+      window.setTimeout(() => this.setState({['buttonErrors']:[]}), 4000);
+    }
   }
 
 

@@ -53,7 +53,8 @@ class AnswerVotes extends React.Component {
         answerId: this.props.answerId
       }); this.addToAnswerVotes(1);
     }else {
-      this.setState({ sessionErrors: ["must be signed in to upvote"]})
+      this.setState({ sessionErrors: ["must be signed in to upvote"]});
+      window.setTimeout(() => this.setState({['sessionErrors']:[]}), 4000);
     }
   }
 
@@ -65,7 +66,8 @@ class AnswerVotes extends React.Component {
         answerId: this.props.answerId
       }); this.addToAnswerVotes(-1);
     }else {
-      this.setState({ sessionErrors: ["must be signed in to downvote"]})
+      this.setState({ sessionErrors: ["must be signed in to downvote"]});
+      window.setTimeout(() => this.setState({['sessionErrors']:[]}), 4000);
     }
   }
   render(){

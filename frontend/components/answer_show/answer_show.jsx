@@ -39,7 +39,7 @@ class AnswerShow extends React.Component{
       this.setState({['renderEdit']: true});
     } else {
       this.setState({ ['editButtonErrors']: ['must be logged in to edit answers' ]});
-            window.setTimeout(() => this.setState({['editButtonErrors']: []}), 4000);
+      window.setTimeout(() => this.setState({['editButtonErrors']: []}), 4000);
     }
   }
   resetRenderEditState(){
