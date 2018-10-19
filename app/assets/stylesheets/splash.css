@@ -26,14 +26,14 @@ input.splash-login-input{
   color: black;
   background-color: snow;
   display: inline-flex;
-  height: 2.3rem;
+  height: 2.25rem;
 }
 input[type=submit].splash-session-submit{
   margin-left: 0;
   background: inherit;
   color: #FFF;
   border: 1px solid #FFF;
-  height: 2.5rem;
+  height: 2.3rem;
 }
 
 input.splash-login-input:hover{
