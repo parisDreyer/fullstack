@@ -11,13 +11,16 @@
 
 }
 
+.splash-login-form{ 
+  width: 400px;
+}
 
 
 
 .splash-signup-container{
-  /* display: inline-block; */
-  padding-top: 10%;
-  width: 100%;
+  padding-left: 10%;
+  display: flex;
+  align-items: center;
 }
 
 
@@ -27,6 +30,7 @@ input.splash-login-input{
   background-color: snow;
   display: inline-flex;
   height: 2.25rem;
+  width: 12rem;
 }
 input[type=submit].splash-session-submit{
   margin-left: 0;
@@ -61,12 +65,12 @@ input.splash-login-input:hover{
 .splash-explanation-text{
   font-weight: normal;
   font-size: 24px;
-  padding-left: 42px;
+  padding-left: 10%;
   padding-right: 42px;
   padding-top: 5%;
   padding-bottom: 10%;
   text-shadow: 0 0 4px black;
-  width: 100%;
+  width: 50%;
   /* #FF0000; */
 }
 .splash-explanation-text h3 { font-size: 42px;}
@@ -79,8 +83,10 @@ input.splash-login-input:hover{
   font-size: 1rem;
 }
 
-@media screen and (max-width: 600px){
-
+@media screen and (max-width: 700px){
+  .splash-explanation-text{
+    width: 100%;
+  }
   .splash-signup-container, .splash-login-form{
     display: none;
   }

@@ -108,6 +108,7 @@ body {
   min-height: 1000px;
   min-width: 400px;
   width: 100%;
+  margin-bottom: 2em;
   position: relative;
   top: 2rem;
 
@@ -217,18 +218,17 @@ textarea {
     font-weight: normal;
     padding-bottom: 25px;
   }
-  .logo-container{
+  /* .logo-container{
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
   .logo{
-    /* background-image: url(/assets/_of-hell.jpeg); */
     background-size: contain;
     background-repeat: no-repeat;
     width: 32px;
     height: 32px;
-  }
+  } */
 
 
 }
