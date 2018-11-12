@@ -32,12 +32,14 @@ class QuestionIndexFooter extends React.Component {
     this.props.updateFilter('offset', offs)
   }
 
-  button_element(pos, increment){
+  button_element(pos, increment, length){
+    let dist = Math.floor(length / increment);
     return (
       <button onClick={() => this.handleSearchClick(pos)}>
-        {pos} - {pos + increment}
+        {Math.floor((dist) * ((pos + 1 + increment) / length))}
       </button>
     );
+    // {pos} - {pos + increment} // <- this was awesome but people don't want to use it
   }
 
   button_range(length){
@@ -47,25 +49,25 @@ class QuestionIndexFooter extends React.Component {
     if(length <= biteSize) return (<div></div>);
 
     const first = pos < biteSize ?
-    <li className="current">{this.button_element(0, biteSize)}</li>
-      : <li>{this.button_element(0, biteSize)}</li>
+    <li className="current">{this.button_element(0, biteSize, length)}</li>
+      : <li>{this.button_element(0, biteSize, length)}</li>
     const afterFirst = doubl < length ?
       (
         pos >= biteSize && pos < doubl ?
-        <li className="current">{this.button_element(biteSize + 1, biteSize)}</li>
-          : <li>{this.button_element(biteSize + 1, biteSize)}</li>
+        <li className="current">{this.button_element(biteSize + 1, biteSize, length)}</li>
+          : <li>{this.button_element(biteSize + 1, biteSize, length)}</li>
       ) : null;
 
 
     const beforeCurrent =
-        pos - biteSize > doubl ? <li>{this.button_element(pos - biteSize, biteSize)}</li> : null
+        pos - biteSize > doubl ? <li>{this.button_element(pos - biteSize, biteSize, length)}</li> : null
     const current = pos > doubl ?
-      <li className="current">{this.button_element(pos, biteSize)}</li> : null
+      <li className="current">{this.button_element(pos, biteSize, length)}</li> : null
     const afterCurrent = length > pos + doubl && pos > biteSize ?
-      <li>{this.button_element(pos + biteSize + 1, biteSize)}</li> : null
+      <li>{this.button_element(pos + biteSize + 1, biteSize, length)}</li> : null
 
     const last = length > pos + biteSize && length > biteSize ?
-      <li>{this.button_element(length - biteSize, biteSize)}</li> : null
+      <li>{this.button_element(length - biteSize, biteSize, length)}</li> : null
 
 
     return (
