@@ -22,8 +22,6 @@
   border-top: 3px solid #F48024;
   box-shadow: 0 1px 0 rgba(12,13,14,0.1), 0 1px 6px rgba(59,64,69,0.1);
 
-
-
 }
 
 
@@ -121,7 +119,7 @@ a.grey-beige{
   color: #535a60;
 }
 
-@media screen and (min-width: 900px){
+@media screen and (max-width: 900px){
   .left-sidebar {
     width: 260px;
     padding-left: 90px;
@@ -147,7 +145,7 @@ a.grey-beige{
 
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 600px){
   .left-sidebar{
     display: none;
   }

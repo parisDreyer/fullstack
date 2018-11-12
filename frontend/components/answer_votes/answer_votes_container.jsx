@@ -48,7 +48,7 @@ class AnswerVotes extends React.Component {
 
   upvote(e){
     if(this.props.user){
-      if(this.state.answerVotes < this.originalVotes + 1){
+      if(this.state.answerVotes < this.state.originalVotes + 1){
         this.props.castVote({
           vote: 1,
           userId: this.props.user.id,
@@ -63,7 +63,7 @@ class AnswerVotes extends React.Component {
 
   downvote(e){
     if(this.props.user){
-      if(this.state.answerVotes > this.originalVotes - 1){
+      if(this.state.answerVotes > this.state.originalVotes - 1){
         this.props.castVote({
           vote: -1,
           userId: this.props.user.id,
@@ -77,16 +77,24 @@ class AnswerVotes extends React.Component {
   }
   render(){
     const errs = this.state.sessionErrors.map(e => e);
+    const upArrow = {
+      backgroundImage: 'url(' + window.images.upArrow + ')',
+      backgroundSize: 'cover',
+      height: '42px',
+      width: '42px',
+    };
+    const downArrow = {
+      backgroundImage: 'url(' + window.images.downArrow + ')',
+      backgroundSize: 'cover',
+      height: '42px',
+      width: '42px',
+    };
     return (
         <div className="votes">
           <div className="error-group">{errs}</div>
-          <button onClick={this.upvote} className="vote-item">
-            <img src={window.images.upArrow} alt="up arrow" className="arrow-img"/>
-          </button>
+          <button style={upArrow} onClick={this.upvote} className="vote-item arrow-img"></button>
           <div className="vote-item">{this.state.answerVotes}</div>
-          <button onClick={this.downvote} className="vote-item">
-            <img src={window.images.downArrow} alt="down arrow" className="arrow-img"/>
-          </button>
+          <button style={downArrow} onClick={this.downvote} className="vote-item arrow-img"></button>
         </div>
     )
   }
