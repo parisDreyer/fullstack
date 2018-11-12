@@ -11,7 +11,8 @@ const RenderSplash = ({user}) => {
         rgba(0,255,0,0.45),
         rgba(0,0,255,0.45)
         ),url(${window.images.heroBanner})`,
-        backgroundSize: 'cover',
+        backgroundSize: '100% 100%',
+        backgroundRepeat: 'no-repeat'
       };
     return (
       <div className="old-hero" style={bkgrnd}>
