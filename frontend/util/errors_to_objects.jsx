@@ -1,6 +1,7 @@
 import React from 'react';
 
-const errorsToObjects = (errorList) => {
+// right side determines if the error is rendered on left or right
+const errorsToObjects = (errorList, rightSide = false) => {
   let username = [];
   let password = [];
   let email = [];
@@ -25,23 +26,20 @@ const errorsToObjects = (errorList) => {
 
   } // end map
   return({
-    username: arrContents(username),
-    password: arrContents(password),
-    email: arrContents(email),
-    general: arrContents(general)
+    username: arrContents(username, rightSide),
+    password: arrContents(password, rightSide),
+    email: arrContents(email, rightSide),
+    general: arrContents(general, rightSide)
   });
 } // end errorsToObjects
 
-function arrContents(arr){
+function arrContents(arr, rightSide){
   return (
-    <div className="error-group">
+    <div className={rightSide ? "right-error-group" : "error-group"}>
       {arr.map(el => el)}
     </div>
   );
 }
-// <ul className="error-group">
-//   {arr.map(el => el)}
-// </ul>
 
 function errorWrap(error, idx, errType) {
   return <div className={`${errType}-error`}>{error}</div>;

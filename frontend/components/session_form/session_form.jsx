@@ -36,7 +36,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const errObjs = errorsToObjects(this.props.errors);
+    const errObjs = errorsToObjects(this.props.errors, window.innerWidth < 600);
     let signupInput = (<br />);
     if(this.props.formType === 'signup'){
       signupInput = (

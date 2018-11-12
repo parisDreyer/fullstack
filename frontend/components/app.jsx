@@ -71,8 +71,8 @@ const App = () => (
       <Redirect to="/" />
     </Switch>
   </div>
-    {footer(window.location.toString().includes('/questions/'))}
+    {footer(false)}
   </div>
 );
-
+// window.location.toString().includes("/questions/");
 export default App;
