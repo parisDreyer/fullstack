@@ -114,12 +114,12 @@ body {
 }
 
 .content {
-  top: 43px;
+  margin-top: 42px;
+  margin-bottom: 2px;
   height: auto;
   width: 100%;
   min-width: 600px;
   display: inline-flex;
-  position: relative;
 }
 
 .center-text-page  h1{
