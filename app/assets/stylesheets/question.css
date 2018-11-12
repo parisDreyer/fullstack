@@ -10,6 +10,11 @@ div.new-question-container {
   width: 100%;
 }
 
+.arrow-img{
+  height: 42px;
+  width: 42px;
+}
+
 .question-index-header{
   vertical-align: baseline;
   display: flex;

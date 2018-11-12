@@ -28,7 +28,8 @@ class QuestionVotes extends React.Component {
     let stateVote = this.props.questionVotes ? this.props.questionVotes : 0;
     this.state = {
       sessionErrors: [],
-      questionVotes: stateVote
+      questionVotes: stateVote,
+      originalVotes: stateVote
     }
     this.upvote = this.upvote.bind(this);
     this.downvote = this.downvote.bind(this);
@@ -51,11 +52,13 @@ class QuestionVotes extends React.Component {
 
   upvote(e){
     if(this.props.user){
-      this.props.castVote({
-        vote: 1,
-        userId: this.props.user.id,
-        questionId: this.props.questionId
-      }); this.addToQuestionVotes(1);
+        if(this.state.questionVotes < this.originalVotes + 1){
+        this.props.castVote({
+          vote: 1,
+          userId: this.props.user.id,
+          questionId: this.props.questionId
+        }); this.addToQuestionVotes(1);
+      }
     }else {
       this.setState({ sessionErrors: ["must be signed in to upvote"]})
     }
@@ -63,11 +66,13 @@ class QuestionVotes extends React.Component {
 
   downvote(e){
     if(this.props.user){
-      this.props.castVote({
-        vote: -1,
-        userId: this.props.user.id,
-        questionId: this.props.questionId
-      }); this.addToQuestionVotes(-1);
+      if (this.state.questionVotes > this.originalVotes - 1) {
+        this.props.castVote({
+          vote: -1,
+          userId: this.props.user.id,
+          questionId: this.props.questionId
+        }); this.addToQuestionVotes(-1);
+      }
     }else {
       this.setState({ sessionErrors: ["must be signed in to downvote"]})
     }
@@ -77,9 +82,13 @@ class QuestionVotes extends React.Component {
     return (
         <div className="question-votes">
           <div className="error-group">{errs}</div>
-          <button onClick={this.upvote} className="vote-item">^</button>
+          <button onClick={this.upvote} className="vote-item">
+          <img src={window.images.upArrow} alt="up vote button" className="arrow-img" />
+          </button>
           <div className="vote-item">{this.state.questionVotes}</div>
-          <button onClick={this.downvote} className="vote-item">V</button>
+          <button onClick={this.downvote} className="vote-item">
+            <img src={window.images.downArrow} alt="down vote button" className="arrow-img" />
+          </button>
         </div>
     )
   }
