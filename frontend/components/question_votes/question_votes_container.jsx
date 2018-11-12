@@ -61,6 +61,7 @@ class QuestionVotes extends React.Component {
       }
     }else {
       this.setState({ sessionErrors: ["must be signed in to upvote"]})
+      window.setTimeout(() => this.setState({ ['sessionErrors']: [] }), 4000);
     }
   }
 
@@ -75,6 +76,7 @@ class QuestionVotes extends React.Component {
       }
     }else {
       this.setState({ sessionErrors: ["must be signed in to downvote"]})
+      window.setTimeout(() => this.setState({ ['sessionErrors']: [] }), 4000);
     }
   }
   render(){
@@ -92,8 +94,8 @@ class QuestionVotes extends React.Component {
       width: '42px',
     };
     return (
-        <div className="question-votes">
-          <div className="error-group">{errs}</div>
+        <div className="qvote">
+          <div className="right-error-group">{errs}</div>
           <button style={upArrow} onClick={this.upvote} className="vote-item arrow-img"></button>
           <div className="vote-item">{this.state.questionVotes}</div>
           <button style={downArrow} onClick={this.downvote} className="vote-item arrow-img"></button>

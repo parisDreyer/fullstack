@@ -91,7 +91,7 @@ class AnswerVotes extends React.Component {
     };
     return (
         <div className="votes">
-          <div className="error-group">{errs}</div>
+          <div className="right-error-group">{errs}</div>
           <button style={upArrow} onClick={this.upvote} className="vote-item arrow-img"></button>
           <div className="vote-item">{this.state.answerVotes}</div>
           <button style={downArrow} onClick={this.downvote} className="vote-item arrow-img"></button>
