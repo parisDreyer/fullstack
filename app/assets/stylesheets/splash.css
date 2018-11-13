@@ -5,10 +5,11 @@
   line-height: 1.53333333;
   margin-bottom: -43px;
   min-width:600px;
+  /* padding-top: 42px; */
 }
 
 .old-hero-background {
-
+  padding-top: 42px;
 }
 
 .splash-login-form{ 
@@ -63,7 +64,7 @@ input.splash-login-input:hover{
 
 .splash-explanation-text{
   font-weight: normal;
-  font-size: 24px;
+  font-size: 18px;
   padding-left: 10%;
   padding-right: 42px;
   padding-top: 5%;
@@ -71,7 +72,7 @@ input.splash-login-input:hover{
   text-shadow: 0 0 4px black;
   width: 60%;
 }
-.splash-explanation-text h3 { font-size: 42px;}
+.splash-explanation-text h3 { font-size: 22px;}
 
 .splash-form-text {
   background-color: lightgrey;
