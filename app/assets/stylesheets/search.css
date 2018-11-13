@@ -1,8 +1,9 @@
 
 .main-search-container{
   display: block;
-  /* justify-content: space-around; */
   margin-left: -30px;
+      margin-top: 4px;
+    min-width: 20em;
 }
 
 .flex-left-col{
@@ -132,7 +133,7 @@ display: none;
 @media screen and (max-width: 900px){
   .main-search-bar{
 
-    width: 22rem;
+    width: 8rem;
 
   }
 }
@@ -141,14 +142,13 @@ display: none;
   .nav-bar{
     position: fixed;
     width: 100%;
-    height: 60px;
   }
   .nav-search-bar-container, .nav-search-bar{
     display: none;
   }
   .main-search-bar{
 
-    width: 20rem;
+    width: 12rem;
 
   }
 }
@@ -156,7 +156,7 @@ display: none;
 @media screen and (max-width: 600px){
   .main-search-bar{
 
-    width: 14rem;
+    width: 8rem;
 
   }
 }
