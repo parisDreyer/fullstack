@@ -27,7 +27,9 @@ img {
   width: 100%;
   height: auto;
 }
-
+input[type="number"]{
+  width: 100%;
+}
 input[type="password"],
 input[type="email"],
 input[type="text"],

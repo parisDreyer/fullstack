@@ -68,7 +68,7 @@
 }
 
 .marg-one-rem{
-  margin-top: 1rem;
+  margin: 1.1rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -108,7 +108,7 @@ body {
 .main-content{
   height: auto;
   min-height: 1000px;
-  /* min-width: 400px; */
+  min-width: 400px;
   width: 100%;
   margin-bottom: 2em;
   position: relative;

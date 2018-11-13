@@ -42,7 +42,7 @@ class SearchShow extends React.Component {
     const index = the_qs ? <QuestionIndex questions={the_qs} total={the_total} /> : <div></div>;
     const foot = the_qs ? <QuestionIndexFooterContainer total={the_total}  /> : <div></div>;
     return (
-      <div>
+      <div className="full-package">
         <div className="content">
           <AsideNav links={1}/>
           <div className="main-content">

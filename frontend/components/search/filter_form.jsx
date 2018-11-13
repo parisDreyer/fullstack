@@ -5,7 +5,7 @@ const handleChange = (filter, updateFilter) => e => (
 );
 
 const FilterForm = ({ limit, updateFilter }) => (
-  <div className="marg-one-rem muted-button">
+  <div className="filter-form marg-one-rem muted-button">
     <label className="center-flex-row ">
       Limit Output
       <div className="one-rem-padding"></div>
