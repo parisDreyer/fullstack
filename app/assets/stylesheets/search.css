@@ -139,10 +139,10 @@ display: none;
 }
 
 @media screen and (max-width: 800px){
-  .nav-bar{
-    position: fixed;
+  /* .nav-bar{
+    position: absolute;
     width: 100%;
-  }
+  } */
   .nav-search-bar-container, .nav-search-bar{
     display: none;
   }
