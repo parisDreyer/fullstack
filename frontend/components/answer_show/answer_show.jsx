@@ -59,34 +59,37 @@ class AnswerShow extends React.Component{
         delete
       </button>) : null;
 
-    return(
-      <div className="float-display">
-        <AnswerVotesContainer answerId={this.props.answer.id}/>
-        <div className="question-body">
+    return <div>
+        <div className="float-display">
+          <AnswerVotesContainer answerId={this.props.answer.id} />
+          <div className="question-body">
+            {editForm}
+            {this.props.answer.body}
 
-          {editForm}
-          {this.props.answer.body}
-
-          <br />
-          <br />
-          <div className="question-body-footer">
-              <div className="right-error-group">{this.state.editButtonErrors.map(e => `${e} `)}</div>
-              <button onClick={(e) => this.editAnswer(e)} className="footer-button">
+            <br />
+            <br />
+            <div className="question-body-footer">
+              <div className="right-error-group">
+                {this.state.editButtonErrors.map(e => `${e} `)}
+              </div>
+              <button onClick={e => this.editAnswer(e)} className="footer-button">
                 improve this answer
               </button>
-              <div className="one-em-padding"></div>
-              <div className="error-group">{this.state.deleteButtonErrors.map(e => `${e} `)}</div>
+              <div className="one-em-padding" />
+              <div className="error-group">
+                {this.state.deleteButtonErrors.map(e => `${e} `)}
+              </div>
               {deleteButton}
-              <div className="one-em-padding"></div>
+              <div className="one-em-padding" />
               posted {timeSinceUpdate(this.props.answer.created_at)} hr:min:secs ago
-              <div className="one-em-padding"></div>
+              <div className="one-em-padding" />
               on {this.props.answer.created_at}
-              <div className="one-em-padding"></div>
-              by { this.props.answer.user ? this.props.answer.user.username : '__'}
+              <div className="one-em-padding" />
+              by {this.props.answer.user ? this.props.answer.user.username : "__"}
+            </div>
           </div>
         </div>
-      </div>
-    );
+      </div>;
   }
 }
 

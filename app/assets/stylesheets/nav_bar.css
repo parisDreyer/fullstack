@@ -126,7 +126,7 @@ a.grey-beige{
   }
 }  */
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 840px){
 
   .header-nav{
     display: flex;

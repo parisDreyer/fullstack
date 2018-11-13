@@ -57,15 +57,16 @@ class AnswerForm extends React.Component {
   }
   answerQuestion(component){
     const header = this.props.formType === 'Edit' ? "Edit Answer" : "Answer"
+    //  className="content"
     return (
-      <div className="content">
+      <div>
 
-        <div className="single-question-show">
           <div className="header-section">
             <div className="question-index-header">
               <h1 className="question-title">{header}</h1>
             </div>
           </div>
+        <div className="single-question-show">
           {this.editHeaderMessage()}
           <div className="question-body">{component}</div>
           {this.editShow()}

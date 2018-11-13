@@ -16,7 +16,7 @@ const mapStateToProps = (state, {match}) => {
   const questionId = parseInt(match.params.questionId);
   const question = selectQuestion(state.entities, questionId);
   const answers = answersArray(state.entities) || [];
-  
+
   return {
     user,
     questionId,

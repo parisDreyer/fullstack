@@ -1,5 +1,5 @@
 .votes {
-  padding: 2em;
+  padding: 0.5em;
   position: relative;
 
   border-bottom: 1px solid #eff0f1;
@@ -15,27 +15,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 2em;
+  padding-right: 0.5em;
   color: #6a737c;
   font-size: 1.5em;
-  padding-left: 1em; 
+  padding-left: 0.2em; 
 }
 
 
-/* .question-votes{
-  padding-right: 1.1em;
-  padding-left: 0.4em;
-  padding-top: 0.1em;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  color: #6a737c;
-  font-size: 1.2em;
-} */
-
 .question-votes{
-  padding-right: 1.1em;
+  padding-right: 0.5em;
   padding-left: 0.4em;
   padding-top: 0.1em;
   position: relative;
@@ -43,13 +31,13 @@
   align-items: center;
   flex-direction: column;
   color: #6a737c;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 
 .question-index-votes{
-  padding-right: 1.4em;
-  padding-left: 0.6em;
+  padding-right: 0.5em;
+  padding-left: 0.4em;
   padding-top: 0.1em;
   position: relative;
   display: flex;
@@ -57,7 +45,7 @@
   align-items: center;
   border-bottom: 1px solid #eff0f1;
   color: #6a737c;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 

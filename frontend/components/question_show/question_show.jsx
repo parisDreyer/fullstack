@@ -66,7 +66,6 @@ class QuestionShow extends React.Component{
           <div>
             {this.props.question.body}
             <br />
-            <br />
             {this.questionFooter()}
           </div>
       </div>
