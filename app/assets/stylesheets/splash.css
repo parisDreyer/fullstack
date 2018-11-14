@@ -34,11 +34,12 @@ input.splash-login-input{
   width: 12rem;
 }
 input[type=submit].splash-session-submit{
-  margin-left: 0;
+  margin-left: 16px;
   background: inherit;
   color: #FFF;
   border: 1px solid #FFF;
-  height: 2.3rem;
+  height: 2rem;
+  padding: 2px;
 }
 
 input.splash-login-input:hover{
