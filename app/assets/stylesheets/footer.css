@@ -7,6 +7,7 @@
   height: auto;
   padding-top: 2em;
   display: flex;
+  justify-content: space-around;
   position: relative;
   z-index: 4000;
   flex-flow: row;
@@ -29,4 +30,10 @@
   /* min-width: 600px; */
   flex-wrap: wrap;
   width: 100%;
+}
+
+.site-footer-logo{
+    margin-left: 20px;
+    margin-right: 4px;
+    margin-top: 12px;
 }

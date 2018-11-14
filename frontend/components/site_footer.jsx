@@ -106,7 +106,7 @@ function col2() {
 
 const footer = () => {
     return <div className="site-footer-container">
-        <div className="site-footer">
+        <div className="site-footer-logo">
           <Link to="/" className="grey-white">
             <div className="logo-container">
               <div className="logo">
