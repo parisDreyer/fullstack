@@ -42,8 +42,8 @@ input[type=submit].splash-session-submit{
   padding: 2px;
 }
 
-input.splash-login-input:hover{
-  border-color: inherit;
+input.splash-login-input:hover, input.splash-login-input:focus{
+  border-left: 0.3px outset #9ec0d8ea;
 }
 
 .splash-form-label{

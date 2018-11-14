@@ -132,7 +132,7 @@ display: none;
   z-index: 3999;
 }
 .nav-search-bar:focus ~ input[type='submit'].search-icon:hover, .nav-search-bar ~ input[type='submit'].search-icon:hover{
-  background-color: darkred;
+  background-color: #07C;
 }
 
 @media screen and (max-width: 900px){
