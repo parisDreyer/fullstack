@@ -63,7 +63,8 @@ class QuestionShow extends React.Component{
       <div className="question-body">
         <div className="float-display">
           <QuestionVotesContainer questionId={this.props.questionId} />
-          <div>
+          <div class="question-body remov-border-of-el">
+            <div></div>
             {this.props.question.body}
             <br />
             {this.questionFooter()}
