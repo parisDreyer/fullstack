@@ -1,9 +1,10 @@
 .single-question-show{
   height: auto;
-  min-height: 1000px;
+  /* min-height: 1000px; */
   /* min-width: 600px; */
   width: 100%;
   padding-left: 0.5em;
+  padding-bottom: 80px;
 }
 
 div.new-question-container {

@@ -84,6 +84,10 @@ input.splash-login-input:hover, input.splash-login-input:focus{
   font-size: 1rem;
 }
 
+.splash-explanation-text p {
+  max-width: 500px;
+}
+
 @media screen and (max-width: 700px){
   .splash-explanation-text{
     width: 100%;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const RightNav = navLinks => (
-  <div className="left-sidebar">
+  <div className="right-sidebar">
     <div className="left-sidebar-sticky-container">
       <div className="space-li-header">
         <img src={window.images.botticelli}
