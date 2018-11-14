@@ -121,6 +121,22 @@ const footer = () => {
           {col3()}
           {col4()}
         </div>
+        <div className="site-footer-outside">
+          <ul>
+            <a href="">Profile</a>
+            <li>
+              <a href="">LinkedIn</a>
+            </li>
+            <li>
+              <a href="">Github</a>
+            </li>
+          </ul>
+          <div>
+            site design / logo © 2018 Stack Exchange Inc; user contributions
+            licensed under cc by-sa 3.0 with attribution required. rev
+            2018.11.14.32177
+          </div>
+        </div>
       </div>;
 }
 
