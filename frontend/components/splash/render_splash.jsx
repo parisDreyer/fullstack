@@ -15,6 +15,8 @@ const RenderSplash = ({user}) => {
         backgroundRepeat: 'no-repeat'
       };
     return (
+      <>
+      <div style={{height: "42px"}}></div>
       <div className="old-hero" style={bkgrnd}>
         <div className="splash-explanation-text">
           <h3>Learn, Share, Build</h3>
@@ -27,7 +29,7 @@ const RenderSplash = ({user}) => {
         <div className="old-hero-background"></div>
         <SplashSignupContainer />
       </div>
-
+      </>
     );
   } else return (<div></div>);
 }
