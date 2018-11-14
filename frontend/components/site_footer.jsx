@@ -18,7 +18,11 @@ function col1(){
 function col2() {
     return (
         <ul>
-            
+            <li className="space-li-header">
+                <a className="home-link" href="/" className="grey-white">
+                    Home
+            </a>
+            </li>
             <li className="space-li">
                 <Link to="#" className="grey-white">
                     <strong>cats</strong>
@@ -44,7 +48,11 @@ function col2() {
 } function col3() {
     return (
         <ul>
-
+            <li className="space-li-header">
+                <a className="home-link" href="/" className="grey-white">
+                    Home
+            </a>
+            </li>
             <li className="space-li">
                 <Link to="#" className="grey-white">
                     <strong>giraffe</strong>
@@ -70,6 +78,11 @@ function col2() {
 } function col4() {
     return (
         <ul>
+            <li className="space-li-header">
+                <a className="home-link" href="/" className="grey-white">
+                    Home
+            </a>
+            </li>
             <li className="space-li">
                 <Link to="/questions" className="grey-white">
                     <div className="logo-container">
@@ -101,7 +114,8 @@ const footer = () => {
               </div>
             </div>
           </Link>
-
+        </div>
+        <div className="site-footer">
           {col1()}
           {col2()}
           {col3()}

@@ -1,8 +1,10 @@
 .site-footer-container{
   height: 7em;
-  min-width: 600px;
+  /* min-width: 600px; */
   min-height: 200px;
+  min-width:400px;
   width: 100%;
+  height: auto;
   padding-top: 2em;
   display: flex;
   position: relative;
@@ -24,6 +26,7 @@
   background-size: auto;
   color: #6a737c;
   padding-top: 1em;
-  min-width: 600px;
+  /* min-width: 600px; */
+  flex-wrap: wrap;
   width: 100%;
 }
