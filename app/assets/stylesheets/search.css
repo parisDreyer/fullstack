@@ -60,7 +60,7 @@ input[type='submit'].main-search-button:hover{
 .main-search-bar, .nav-search-bar{
   margin-left: 2em;
   height: 2.4em;
-  margin-top: -0.33em;
+  margin-top: -0.45em;
   border-width: 1px;
   border-color: #c8ccd0;
   background-color: #FFF;
@@ -104,7 +104,7 @@ display: none;
   position: absolute;
   right: 0;
   top: 60%;
-  transform: translate(12.5em,-50%);
+  transform: translate(12.5em,-53%);
   border-radius: 0 3px 3px 0;
   z-index: 4000;
   padding: 0 12px;
@@ -150,6 +150,7 @@ display: none;
   } */
   .nav-search-bar-container, .nav-search-bar{
     display: none;
+    /* also adjusting margin-top of stackinferno link to 2px at this setting */
   }
   .main-search-bar{
 
