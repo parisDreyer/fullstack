@@ -7,6 +7,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+import footer from './site_footer';
 
 
 import SignupFormContainer from './session_form/signup_form_container';
@@ -20,38 +21,6 @@ import QuestionShowContainer from './question_show/question_show_container';
 import QuestionFormContainer from './question_form/question_form_container';
 import QuestionEditContainer from './question_show/question_edit_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-
-
-function footer(render){
-  if (render) return null;
-  return(
-  <div className="site-footer-container">
-    <div className="site-footer">
-      <div className="space-li-header">
-        <a className="home-link" href="/" className="grey-white">Home</a>
-      </div>
-      <ul>
-        <li className="space-li">
-          <Link to="/questions" className="grey-white">
-            <div className="logo-container">
-              <div className="logo">
-                <img src={window.images.logo}
-                  alt="site header logo is a drawing of the rings of hell
-                  as described in Dante Alighieri's epic poem Inferno" />
-              </div>
-              stack <strong>inferno</strong>
-            </div>
-          </Link>
-        </li>
-        <li className="space-li">
-          <Link to="/jobs" className="grey-white">
-            <strong>Jobs</strong>
-          </Link>
-        </li>
-      </ul>
-    </div>
-  </div>);
-}
 
 
 const App = () => (
@@ -71,7 +40,7 @@ const App = () => (
       <Redirect to="/" />
     </Switch>
   </div>
-    {footer(false)}
+    {footer()}
   </div>
 );
 // window.location.toString().includes("/questions/");
