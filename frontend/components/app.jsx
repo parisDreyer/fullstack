@@ -57,7 +57,7 @@ function footer(render){
 const App = () => (
   <div>
   <div className="full-package">
-    <HeaderContainer inSearchQs={window.location.toString().includes('/questions/')}/>
+    <HeaderContainer inSearchQs={window.location.toString().includes('/questions/?=')}/>
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />

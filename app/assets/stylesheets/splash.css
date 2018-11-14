@@ -76,6 +76,11 @@ input.splash-login-input:hover, input.splash-login-input:focus{
 }
 .splash-explanation-text h3 { font-size: 22px;}
 
+div.splash-form-text{
+  font-size:14px;
+  color:#535a60;
+}
+
 .splash-form-text {
   background-color: lightgrey;
   min-width: 7rem;
