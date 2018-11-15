@@ -15,23 +15,21 @@ class IndexItem extends React.Component {
   }
   render() {
     const { title, body, user, updated_at } = this.props.question;
-    return (
-      <div className="question-index-votes">
-        <QuestionVotesNumberContainer
-          questionId={this.props.question.id}
-          numAnswers={this.props.question.answer_count}/>
-        <div className="question-index-item" onClick={this.handleClick}>
-          <div className="index-item-title">
-            {title || "No title!"}
-          </div>
+    return <div className="question-index-votes">
+        <QuestionVotesNumberContainer questionId={this.props.question.id} numAnswers={this.props.question.answer_count} />
+        <div className="question-index-item remov-border-of-el" onClick={this.handleClick}>
+          <div className="index-item-title">{title || "No title!"}</div>
           <div className="index-item-footer">
-            <div className="index-footer-text">modified {timeSinceUpdate(updated_at)} hr:min:secs ago</div>
-            <div className="one-em-padding"></div>
-            <div className="index-footer-text">question by { user ? user.username : "anon"}</div>
+            <div className="index-footer-text">
+              modified {timeSinceUpdate(updated_at)} hr:min:secs ago
+            </div>
+            <div className="one-em-padding" />
+            <div className="index-footer-text">
+              question by {user ? user.username : "anon"}
+            </div>
           </div>
         </div>
-      </div>
-    );
+      </div>;
   }
 }
 export default withRouter(IndexItem);
