@@ -108,6 +108,20 @@ body {
 .remov-border-of-el{
   border:0;
 }
+.min-hght-400{
+  min-height: 400px;
+}
+.min-hght-800{
+  min-height: 800px;
+}
+.basic-info-text {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+.basic-info-text ul {
+  list-style-type: initial;
+  list-style-position: inside;
+}
 
 .main-content{
   height: auto;

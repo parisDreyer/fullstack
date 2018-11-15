@@ -24,10 +24,13 @@ class HeaderContainer extends React.Component {
     this.handleSearchClick = this.handleSearchClick.bind(this);
   }
   handleSearchClick(e){
+    console.log($("input.nav-search-bar").val());
     e.preventDefault();
     let val = $('input.nav-search-bar').val()
-    if(!window.location.toString().includes('questions/'))
-    window.location = `${window.location}questions/?=${val}`;
+    // if(!window.location.toString().includes('questions/'))
+    // window.location = (`/${window.location}questions/?=${val}`);
+    window.location = `/#/questions/?=${val}`;
+    
   }
 
   render() {
@@ -35,7 +38,7 @@ class HeaderContainer extends React.Component {
     const renderNavBarSearch = !this.props.inSearchQs ? (
       <form onSubmit={this.handleSearchClick} className="nav-search-bar-container">
         <input className="nav-search-bar" type="text" />
-        <input type="submit" className="search-icon" value="> "/>
+        <input type="submit" onClick={this.handleSearchClick} className="search-icon" value="> "/>
       </form>
     ) : (<div></div>);
 
