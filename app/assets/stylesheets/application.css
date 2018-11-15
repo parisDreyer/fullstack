@@ -146,13 +146,13 @@ body {
   font-size: 2em;
 }
 .center-text-page  h2{
-  font-size: 1em;
+  font-size: 1.8em;
 }
 .center-text-page  h3{
-  font-size: 0.5em;
+  font-size: 1.6em;
 }
 .center-text-page  h4{
-  font-size: 0.4em;
+  font-size: 1.4em;
 }
 
 .center-text-page{
@@ -182,6 +182,8 @@ a, .header-button, .footer-button {
   cursor: pointer;
   /* font-size: 0.7em; */
 }
+
+.not-allowed {cursor: not-allowed;}
 
 .logo-container{
   display: inline-flex;

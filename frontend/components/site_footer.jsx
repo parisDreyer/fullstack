@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom';
 function col1(){
     return <ul>
         <li className="space-li-header">
-            <a className="home-link" href="/" className="grey-white">
-              Home
-            </a>
+            <a className="o-ninety-fiveem grey-white" href="/">
+            Home
+          </a>
         </li>
         <li className="space-li">
           <Link to="/questions" className="grey-white">
@@ -16,92 +16,79 @@ function col1(){
       </ul>;
 }
 function col2() {
-    return (
-        <ul>
-            <li className="space-li-header">
-                <a className="home-link" href="/" className="grey-white">
-                    Home
-            </a>
-            </li>
-            <li className="space-li">
-                <Link to="#" className="grey-white">
-                    <strong>cats</strong>
-                </Link>
-            </li>
+    return <ul>
+        <li className="space-li-header">
+            <div className="home-link not-allowed grey-white">
+            Spaceship
+          </div>
+        </li>
+        <li className="space-li">
+            <div className="not-allowed grey-white">
+            <strong>cats</strong>
+          </div>
+        </li>
 
+        <li className="space-li">
+            <div className="not-allowed grey-white">
+                <strong>dogs</strong>
+            </div>
+        </li>
 
-
-            <li className="space-li">
-                <Link to="#" className="grey-white">
-                    <strong>dogs</strong>
-                </Link>
-            </li>
-
-
-            <li className="space-li">
-                <Link to="#" className="grey-white">
-                    <strong>bananas</strong>
-                </Link>
-            </li>
-        </ul>
-    );
+        <li className="space-li">
+            <div className="not-allowed grey-white">
+                <strong>bananas</strong>
+            </div>
+        </li>
+      </ul>;
 } function col3() {
-    return (
-        <ul>
-            <li className="space-li-header">
-                <a className="home-link" href="/" className="grey-white">
-                    Home
-            </a>
-            </li>
-            <li className="space-li">
-                <Link to="#" className="grey-white">
-                    <strong>giraffe</strong>
-                </Link>
-            </li>
+    return <ul>
+        <li className="space-li-header">
+          <a href="https://en.wikipedia.org/wiki/Dante_Alighieri" target="_blank" className="o-ninety-fiveem grey-white">
+            Dante Alighieri
+          </a>
+        </li>
+        <li className="space-li">
+          <div className="not-allowed grey-white">
+            <strong>giraffe</strong>
+          </div>
+        </li>
 
+        <li className="space-li">
+          <div className="not-allowed grey-white">
+            <strong>meaning</strong>
+          </div>
+        </li>
 
-
-            <li className="space-li">
-                <Link to="#" className="grey-white">
-                    <strong>meaning</strong>
-                </Link>
-            </li>
-
-
-            <li className="space-li">
-                <Link to="#" className="grey-white">
-                    <strong>sense</strong>
-                </Link>
-            </li>
-        </ul>
-    );
+        <li className="space-li">
+          <div className="not-allowed grey-white">
+            <strong>sense</strong>
+          </div>
+        </li>
+      </ul>;
 } function col4() {
-    return (
-        <ul>
-            <li className="space-li-header">
-                <a className="home-link" href="/" className="grey-white">
-                    Home
-            </a>
-            </li>
-            <li className="space-li">
-                <Link to="/questions" className="grey-white">
-                    <div className="logo-container">
-                        <div className="logo">
-                            <img src={window.images.logo} alt="logo" />
-                        </div>
-                        stack <strong>inferno</strong>
-                    </div>
-                </Link>
-            </li>
+    return <ul>
+        <li className="space-li-header">
+          <div className="home-link not-allowed grey-white">
+            Earthship
+          </div>
+        </li>
+        <li className="space-li">
+          <Link to="/questions" className="grey-white">
+            <div className="logo-container">
+              <div className="logo">
+                <img src={window.images.logo} alt="logo" />
+              </div>
+              stack <strong>inferno</strong>
+            </div>
+          </Link>
+        </li>
 
-
-            <li className="space-li">
-                <Link to="/jobs" className="grey-white">
-                    <strong>Jobs</strong>
-                </Link>
-            </li>
-        </ul>
-    );
+        <li className="space-li">
+          <Link to="/jobs" className="grey-white">
+            <strong>Jobs</strong>
+          </Link>
+        </li>
+      </ul>;
 }
 
 const footer = () => {
@@ -123,18 +110,26 @@ const footer = () => {
         </div>
         <div className="site-footer-outside">
           <ul>
-            <a href="">Profile</a>
             <li>
-              <a href="">LinkedIn</a>
+              <a className="grey-white" href="http://www.lukeparisdreyer.space/" target="_blank">
+                Profile
+              </a>
             </li>
             <li>
-              <a href="">Github</a>
+                    <a className="grey-white" href="https://www.linkedin.com/in/lukepdreyer/" target="_blank">
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a className="grey-white" href="https://github.com/parisDreyer" target="_blank">
+                Github
+              </a>
             </li>
           </ul>
           <div>
-            site design / logo © 2018 Stack Exchange Inc; user contributions
-            licensed under cc by-sa 3.0 with attribution required. rev
-            2018.11.14.32177
+            site design / logo © 2018 Stack Inferno Inc; user contributions
+            licensed under cc by-sai 3.2 with attribution required. rev
+            2018.11.14.-^-
           </div>
         </div>
       </div>;
