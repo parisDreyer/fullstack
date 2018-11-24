@@ -15,7 +15,9 @@
 */
 
 .full-package{
-  width: 100%;
+  /* width: 100%;
+  height: 100%; */
+  min-height: 600px;
 }
 
 #root {
@@ -23,9 +25,12 @@
    display: block;
    top:0;
    left:0;
-   bottom: 10em;
    right: 0;
+   bottom: 0;
+   /* bottom: 10em; */
    font-size: 14px;
+  height:100%;
+  width:100%;
 }
 
 .hidden{
@@ -95,6 +100,11 @@
 
 body {
   font-family: 'Abel', sans-serif;
+      position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .header-section{
@@ -242,6 +252,12 @@ textarea {
   font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
 
   resize: vertical;
+}
+
+@media screen and (max-width: 840px){
+  .content{
+    flex-direction: column;
+}
 }
 
 @media screen and (max-width: 600px){

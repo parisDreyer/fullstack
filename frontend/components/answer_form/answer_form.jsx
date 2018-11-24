@@ -59,7 +59,7 @@ class AnswerForm extends React.Component {
     const header = this.props.formType === 'Edit' ? "Edit Answer" : "Answer"
     //  className="content"
     return (
-      <div>
+      <>
 
           <div className="header-section">
             <div className="question-index-header">
@@ -71,7 +71,7 @@ class AnswerForm extends React.Component {
           <div className="question-body">{component}</div>
           {this.editShow()}
         </div>
-      </div>
+      </>
     );
   }
 

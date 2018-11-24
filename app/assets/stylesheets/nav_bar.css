@@ -165,8 +165,21 @@ a.grey-beige{
     box-shadow: 0px 0.5px lightgrey;
   }
 
-  .left-sidebar, .right-sidebar{
+  .left-sidebar {
     display: none;
+  }
+  .right-sidebar{
+      box-sizing: border-box;
+  width: 163px;
+  min-height: 420px;
+  padding: 20px;
+  flex-shrink: 0;
+  padding-right: 19px;
+  flex-shrink: 0;
+  z-index: 1000;
+  position: relative;
+  box-shadow: 0 0 0 rgba(12,13,14,0.05);
+  transition: box-shadow ease-in-out .1s,transform ease-in-out .1s;
   }
 }
 @media screen and (max-width: 600px){
