@@ -170,13 +170,14 @@ a.grey-beige{
   }
   .right-sidebar{
       box-sizing: border-box;
-  width: 163px;
+  width: 200px;
   min-height: 420px;
   padding: 20px;
   flex-shrink: 0;
   padding-right: 19px;
   flex-shrink: 0;
   z-index: 1000;
+  margin: 0 auto;
   position: relative;
   box-shadow: 0 0 0 rgba(12,13,14,0.05);
   transition: box-shadow ease-in-out .1s,transform ease-in-out .1s;
