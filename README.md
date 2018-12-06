@@ -1,7 +1,29 @@
 # `README`
 
 
-- [Stack Inferno Live](https://stack-infierno.herokuapp.com/#/)
+## Live
+[Stack Inferno Live](https://stack-infierno.herokuapp.com/#/)
+
+
+## Technologies
+
+* React
+* Redux
+* Rails
+* Postgresql
+* Babel
+* Webpack
+* HTML
+* CSS
+* Ruby
+* Javascript
+
+
+
+
+
+
+## `Setup`
 - `This README documents the steps necessary to get the
 application up and running.`
 - `Welcome to Stack Inferno. Stack Inferno is a clone of StackOverflow that uses text from 14th Century Italian Epic Poet Dante Alighieri's Divine Comedy as sample data.`
@@ -9,7 +31,6 @@ application up and running.`
 - Main Page
 ![Site Index Page](/main_site.png?raw=true "Main Site Page")
 
-## `Setup`
 
 - `git clone the repo with the url:` https://github.com/parisDreyer/fullstack.git
 - `gem install`  
